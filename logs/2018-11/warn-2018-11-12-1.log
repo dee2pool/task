@@ -1,0 +1,4 @@
+2018-11-12 09:32:23.734 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.hngd.vmns.data]' package. Please check your configuration.
+2018-11-12 09:32:25.822 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-12 09:32:25.826 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-12 09:32:34.293 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1541986354293, current=DOWN, previous=UP]

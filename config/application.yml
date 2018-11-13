@@ -34,8 +34,39 @@ eureka:
     service-url:
       defaultZone: http://192.168.0.144:12331/eureka,http://192.168.0.144:12332/eureka
   instance:
-    hostname: 192.168.0.239
+    hostname: 192.168.0.249
 logging:
-   config: ./config/log4j2.xml
+   config: ./config/log4j.xml
+lts:
+   jobclient:
+      cluster-name: test_cluster
+      registry-address: zookeeper://192.168.8.128:2181
+      node-group: test_jobClient
+      use-retry-client: true
+      configs: 
+        job:
+          fail:
+            store: mapdb
+   tasktracker:
+      cluster-name: test_cluster
+      registry-address: zookeeper://192.168.8.128:2181
+      node-group: test_trade_TaskTracker
+      job-runner-class: com.hngd.service.impl.JobRunnerImpl
+      configs: 
+        job:
+          fail:
+            store: mapdb
+   jobtracker:
+    cluster-name: test_cluster
+    listen-port: 35001
+    registry-address: zookeeper://192.168.8.128:2181
+    configs:
+      job:
+        logger: mysql
+        queue: mysql
+      jdbc:
+        url: jdbc:mysql://127.0.0.1:3306/lts
+        username: root
+        password: root
 
  
