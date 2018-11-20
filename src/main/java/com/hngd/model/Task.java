@@ -1,5 +1,6 @@
 package com.hngd.model;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.validation.constraints.NotNull;
@@ -11,14 +12,13 @@ public class Task{
 	//任务id
 	public String taskId;
 	
+	//任务名称
+	@NotNull
+	public String taskName;
+	
 	//优先级(数值越大优先级越低)
 	private Integer priority;
-    
-    //提交结果
-    private String submitResult;
-    
-    //任务执行结果
-    private String executeResult;
+	
     /**
      * 执行表达式 和 quartz 的一样
      * 如果这个为空，表示立即执行的
@@ -35,6 +35,12 @@ public class Task{
     
     //具体执行哪个服务例如:录像文件查询
     private String taskType;
+    
+    //设备信息(存储json信息)
+    private List<String> deviceInfos;
+    
+    //额外服务参数(存储json信息)
+    private String serviceParam;
 
 	public String getTaskId() {
 		return taskId;
@@ -44,28 +50,20 @@ public class Task{
 		this.taskId = taskId;
 	}
 
+	public String getTaskName() {
+		return taskName;
+	}
+
+	public void setTaskName(String taskName) {
+		this.taskName = taskName;
+	}
+
 	public Integer getPriority() {
 		return priority;
 	}
 
 	public void setPriority(Integer priority) {
 		this.priority = priority;
-	}
-
-	public String getSubmitResult() {
-		return submitResult;
-	}
-
-	public void setSubmitResult(String submitResult) {
-		this.submitResult = submitResult;
-	}
-
-	public String getExecuteResult() {
-		return executeResult;
-	}
-
-	public void setExecuteResult(String executeResult) {
-		this.executeResult = executeResult;
 	}
 
 	public String getCronExpression() {
@@ -99,8 +97,23 @@ public class Task{
 	public void setTaskType(String taskType) {
 		this.taskType = taskType;
 	}
-    
-    
-    
-    
+	
+	
+	public List<String> getDeviceInfos() {
+		return deviceInfos;
+	}
+
+	public void setDeviceInfos(List<String> deviceInfos) {
+		this.deviceInfos = deviceInfos;
+	}
+
+	public String getServiceParam() {
+		return serviceParam;
+	}
+
+	public void setServiceParam(String serviceParam) {
+		this.serviceParam = serviceParam;
+	}
+	
+	
 }

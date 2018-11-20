@@ -1,4 +1,4 @@
-package com.hngd.client;
+/*package com.hngd.client;
 
 import java.util.concurrent.TimeUnit;
 
@@ -34,3 +34,4 @@ public class TaskClient {
 		channel.shutdown().awaitTermination(5,TimeUnit.SECONDS);
 	}
 }
+*/

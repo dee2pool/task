@@ -18,7 +18,7 @@ public class JobRunnerImpl implements JobRunner{
 		
 		try {
             BizLogger bizLogger = jobContext.getBizLogger();
-            System.out.println("执行业务逻辑");
+            System.out.println("执行业务逻辑"+jobContext.getJob());
             // TODO 业务逻辑
             LOGGER.info("我要执行：" + jobContext);
             // 会发送到 LTS (JobTracker上)

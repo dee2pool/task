@@ -3,6 +3,7 @@ package com.hngd.service.impl;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,6 @@ public class JobClientServiceImpl implements JobClientService{
 	
 	@Override
 	public Result<String> addJob(Task task) {
-		
 		//生成task_id
 		task.setTaskId(UuidUtils.uuid());
 		Job job=new Job();
@@ -38,26 +38,22 @@ public class JobClientServiceImpl implements JobClientService{
 		job.setTaskTrackerNodeGroup("test_trade_TaskTracker");
 		Map<String,String> param=new HashMap<>();
 		param.put("taskType",task.getTaskType());
+		//将设备信息保存在map
+		param.put("deviceInfo",StringUtils.join(task.getDeviceInfos(),','));
+		//将额外参数保存在map中
+		param.put("extParam",task.getServiceParam());
+		//将任务类型保存到map中
+		param.put("jobType",task.getJobType().toString());
+		job.setExtParams(param);
 		job.setNeedFeedback(true);
 		job.setReplaceOnExist(true);
 		//判断任务类型
 		if(task.getJobType()!=null) {
 			switch (task.getJobType()) {
-			case 1:
-				//如果是实时任务，调用lts提交任务，接收结果并设置提交结果，设置执行结果为等待执行并保存到数据库中
-				param.put("jobType","实时任务");
-				job.setExtParams(param);
-				break;
 			case 2:
-				//如果是定时任务，调用lts提交任务，接收结果并设置提交结果，设置执行结果为等待执行并保存到数据库中
-				param.put("jobType","定时任务");
-				job.setExtParams(param);
 				job.setTriggerTime(task.getTriggerTime());
 				break;
 			case 3:
-				//如果是周期任务，调用lts提交任务，接收结果并设置提交结果，设置执行结果为等待执行并保存到数据库中
-				param.put("jobType","周期任务");
-				job.setExtParams(param);
 				job.setCronExpression(task.getCronExpression());
 				break;
 			default:

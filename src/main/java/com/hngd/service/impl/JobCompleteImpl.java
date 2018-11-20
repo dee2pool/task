@@ -17,7 +17,7 @@ public class JobCompleteImpl implements JobCompletedHandler{
 		// 任务执行反馈结果处理
         if (CollectionUtils.isNotEmpty(jobResults)) {
             for (JobResult jobResult : jobResults) {
-                System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + " 任务执行完成：" + jobResult);
+            	
             }
         }
 		
