@@ -1,12 +1,21 @@
 package com.hngd;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.google.gson.Gson;
+import com.hngd.common.result.Result;
+import com.hngd.common.web.page.PagedData;
 import com.hngd.model.Task;
+import com.hngd.model.TaskPo;
+import com.hngd.model.TaskVo;
 import com.hngd.service.JobClientService;
 import com.hngd.vmns.data.HnvmnsTaskProcessorApplication;
 
@@ -18,10 +27,8 @@ public class TaskTest {
 	
 	@Test
 	public void addTaskTest() {
-		Task task=new Task();
-		task.setJobType(1);
-		task.setTaskType("录像文件查询");
-		jobClientService.addJob(task);
+	Result<PagedData<TaskVo>> r=jobClientService.getTaskList(1,20,null,null, null, null, null, null, null);
+	System.out.println(r);
 	}
 
 }

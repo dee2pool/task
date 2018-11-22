@@ -1,0 +1,7 @@
+2018-11-14 08:22:13.413 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.hngd.vmns.web, com.hngd.vmns.data]' package. Please check your configuration.
+2018-11-14 08:22:28.638 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-14 08:22:28.669 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-14 08:23:42.486 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542155022486, current=DOWN, previous=UP]
+2018-11-14 08:23:42.917 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@68710c41, lts version: 1.6.9, current host: 192.168.0.249
+java.nio.channels.ClosedChannelException: null
+2018-11-14 08:23:43.018 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249

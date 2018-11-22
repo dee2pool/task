@@ -41,6 +41,17 @@ public class Task{
     
     //额外服务参数(存储json信息)
     private String serviceParam;
+    
+    //备注
+    private String remark;
+
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
 
 	public String getTaskId() {
 		return taskId;

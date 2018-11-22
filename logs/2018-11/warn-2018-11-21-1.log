@@ -1,0 +1,85 @@
+2018-11-21 14:12:07.211 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.hngd.vmns.web, com.hngd.vmns.data]' package. Please check your configuration.
+2018-11-21 14:12:10.289 [main] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jobClientServiceImpl': Unsatisfied dependency expressed through field 'jobClient'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.github.ltsopensource.spring.boot.JobClientAutoConfiguration': Invocation of init method failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jobCompleteImpl': Unsatisfied dependency expressed through field 'jobMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hngd.dao.JobMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-11-21 14:15:38.273 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.hngd.vmns.web, com.hngd.vmns.data]' package. Please check your configuration.
+2018-11-21 14:16:12.802 [main] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jobClientServiceImpl': Unsatisfied dependency expressed through field 'jobMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hngd.dao.JobMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-11-21 14:16:12.814 [main] WARN  com.github.ltsopensource.core.registry.Registry -  [LTS] Failed to close zookeeper client null, cause: null, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.NullPointerException: null
+	at com.github.ltsopensource.core.registry.zookeeper.ZookeeperRegistry.destroy(ZookeeperRegistry.java:178) [lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.registry.FailbackRegistry$2.call(FailbackRegistry.java:55) [lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.NodeShutdownHook$1.onObserved(NodeShutdownHook.java:25) [lts-1.6.9.jar:?]
+	at com.github.ltsopensource.ec.injvm.InjvmEventCenter.publishSync(InjvmEventCenter.java:63) [lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.cluster.AbstractJobNode.stop(AbstractJobNode.java:126) [lts-1.6.9.jar:?]
+	at com.github.ltsopensource.spring.boot.AbstractAutoConfiguration.destroy(AbstractAutoConfiguration.java:41) [lts-1.6.9.jar:?]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:256) [spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571) [spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543) [spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1052) [spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504) [spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1059) [spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1035) [spring-context-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:559) [spring-context-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at com.hngd.vmns.data.HnvmnsTaskProcessorApplication.main(HnvmnsTaskProcessorApplication.java:21) [classes/:?]
+2018-11-21 14:19:17.420 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.hngd.vmns.web, com.hngd.vmns.data]' package. Please check your configuration.
+2018-11-21 14:19:29.689 [main] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jobClientServiceImpl': Unsatisfied dependency expressed through field 'jobMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hngd.dao.JobMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-11-21 14:21:25.143 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-21 14:21:25.160 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-21 14:22:13.375 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542781333375, current=DOWN, previous=UP]
+2018-11-21 14:22:13.683 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@16a7b80e, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.IllegalStateException: executor not accepting a task
+	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:49) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:188) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:174) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:511) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:485) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:424) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:103) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:978) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:512) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:423) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:482) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+2018-11-21 14:22:13.787 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-21 16:44:59.810 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-21 16:44:59.834 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-21 16:54:07.911 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-21 16:54:07.974 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-21 17:03:30.852 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-21 17:03:30.861 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-21 17:13:45.705 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-21 17:13:45.708 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-21 17:15:16.605 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542791716605, current=DOWN, previous=UP]
+2018-11-21 17:15:16.859 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@75f77f61, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.IllegalStateException: executor not accepting a task
+	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:49) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:188) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:174) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:511) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:485) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:424) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:103) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:978) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:512) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:423) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:482) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+2018-11-21 17:15:16.975 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249

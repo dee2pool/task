@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hngd.dao.JobMapper">
+	<resultMap id="BaseResultMap" type="com.hngd.model.TaskVo">
+    	<id column="task_id" jdbcType="VARCHAR" property="taskId" />
+    	<result column="task_name" jdbcType="VARCHAR" property="taskName" />
+    	<result column="priority" jdbcType="INTEGER" property="priority" />
+    	<result column="submit_result" jdbcType="VARCHAR" property="submitResult" />
+    	<result column="execute_result" jdbcType="VARCHAR" property="executeResult" />
+    	<result column="job_type" jdbcType="INTEGER" property="jobType" />
+    	<result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    	<result column="run_count" jdbcType="INTEGER" property="runCount" />
+    	<result column="faile_count" jdbcType="INTEGER" property="faileCount" />
+    	<result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    	<result column="trigger_time" jdbcType="TIMESTAMP" property="triggerTime" />
+    	<result column="task_type" jdbcType="VARCHAR" property="taskType" />
+  	</resultMap>
+  	<sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  	<sql id="Base_Column_List">
+    	task_id, task_name, priority, submit_result, execute_result, job_type, end_time, run_count,faile_count,remarks,trigger_time,task_type
+  	</sql>
+	<select id="selectByExample" parameterType="com.hngd.model.TaskExample" resultMap="BaseResultMap">
+		select
+    	<if test="distinct">
+      distinct
+    	</if>
+    'true' as QUERYID,
+    	<include refid="Base_Column_List" />
+    	from tb_job
+    	<if test="_parameter != null">
+      		<include refid="Example_Where_Clause" />
+    	</if>
+    	<if test="orderByClause != null">
+      		order by ${orderByClause}
+    	</if>
+	</select>
+	<insert id="insertSelective" parameterType="com.hngd.model.TaskPo">
+		insert into tb_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="taskId != null">
+				task_id,
+			</if>
+			<if test="taskName != null">
+				task_name,
+			</if>
+			<if test="priority != null">
+				priority,
+			</if>
+			<if test="submitNodeGroup != null">
+				submit_node_group,
+			</if>
+			<if test="taskTrackerNodeGroup != null">
+				task_tracker_node_group,
+			</if>
+			<if test="taskDevice != null">
+				task_device,
+			</if>
+			<if test="maxRetryTimes != null">
+				max_retry_times,
+			</if>
+			<if test="cronTemplet != null">
+				cron_templet,
+			</if>
+			<if test="triggerTime != null">
+				trigger_time,
+			</if>
+			<if test="replaceOnExist != null">
+				replace_on_exist,
+			</if>
+			<if test="relyOnPrevCycle != null">
+				rely_on_prev_cycle,
+			</if>
+			<if test="JobType != null">
+				job_type,
+			</if>
+			<if test="taskType != null">
+				task_type,
+			</if>
+			<if test="submitResult != null">
+				submit_result,
+			</if>
+			<if test="executeResult != null">
+				execute_result,
+			</if>
+			<if test="endTime != null">
+				end_time,
+			</if>
+			<if test="runCount != null">
+				run_count,
+			</if>
+			<if test="faileCount != null">
+				faile_count,
+			</if>
+			<if test="submitParam != null">
+				submit_param,
+			</if>
+			<if test="remarks != null">
+				remarks
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="taskId != null">
+				#{taskId,jdbcType=VARCHAR},
+			</if>
+			<if test="taskName != null">
+				#{taskName,jdbcType=VARCHAR},
+			</if>
+			<if test="priority != null">
+				#{priority,jdbcType=INTEGER},
+			</if>
+			<if test="submitNodeGroup != null">
+				#{submitNodeGroup,jdbcType=VARCHAR},
+			</if>
+			<if test="taskTrackerNodeGroup != null">
+				#{taskTrackerNodeGroup,jdbcType=VARCHAR},
+			</if>
+			<if test="taskDevice != null">
+				#{taskDevice,jdbcType=OTHER,typeHandler=com.hngd.handler.JsonElementTypeHandler},
+			</if>
+			<if test="maxRetryTimes != null">
+				#{maxRetryTimes,jdbcType=INTEGER},
+			</if>
+			<if test="cronTemplet != null">
+				#{cronTemplet,jdbcType=VARCHAR},
+			</if>
+			<if test="triggerTime != null">
+				#{triggerTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="replaceOnExist != null">
+				#{replaceOnExist,jdbcType=BOOLEAN},
+			</if>
+			<if test="relyOnPrevCycle != null">
+				#{relyOnPrevCycle,jdbcType=BOOLEAN},
+			</if>
+			<if test="JobType != null">
+				#{JobType,jdbcType=INTEGER},
+			</if>
+			<if test="taskType != null">
+				#{taskType,jdbcType=VARCHAR},
+			</if>
+			<if test="submitResult != null">
+				#{submitResult,jdbcType=VARCHAR},
+			</if>
+			<if test="executeResult != null">
+				#{executeResult,jdbcType=VARCHAR},
+			</if>
+			<if test="endTime != null">
+				#{endTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="runCount != null">
+				#{runCount,jdbcType=INTEGER},
+			</if>
+			<if test="faileCount != null">
+				#{faileCount,jdbcType=INTEGER},
+			</if>
+			<if test="submitParam != null">
+				#{submitParam,jdbcType=OTHER,typeHandler=com.hngd.handler.JsonElementTypeHandler},
+			</if>
+			<if test="remarks != null">
+				#{remarks,jdbcType=VARCHAR}
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByExampleSelective" parameterType="map">
+		update tb_job
+		<set>
+			<if test="record.taskId != null">
+        		task_id = #{record.taskId,jdbcType=VARCHAR},
+      		</if>
+      		<if test="record.taskName != null">
+        		task_name = #{record.taskName,jdbcType=VARCHAR},
+      		</if>
+      		<if test="record.priority != null">
+        		priority = #{record.priority,jdbcType=INTEGER},
+      		</if>
+      		<if test="record.submitNodeGroup != null">
+        		submit_node_group = #{record.submitNodeGroup,jdbcType=VARCHAR},
+      		</if>
+      		<if test="record.taskTrackerNodeGroup != null">
+        		task_tracker_node_group = #{record.taskTrackerNodeGroup,jdbcType=VARCHAR},
+      		</if>
+      		<if test="record.taskDevice != null">
+        		task_device = #{record.taskDevice,jdbcType=OTHER,typeHandler=com.hngd.handler.JsonElementTypeHandler},
+      		</if>
+      		<if test="record.maxRetryTimes != null">
+        		max_retry_times = #{record.maxRetryTimes,jdbcType=INTEGER},
+      		</if>
+      		<if test="record.cronTemplet != null">
+        		cron_templet = #{record.cronTemplet,jdbcType=VARCHAR},
+      		</if>
+      		<if test="record.triggerTime != null">
+				trigger_time=#{record.triggerTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.replaceOnExist != null">
+				replace_on_exist=#{record.replaceOnExist,jdbcType=BOOLEAN},
+			</if>
+			<if test="record.relyOnPrevCycle != null">
+				rely_on_prev_cycle=#{record.relyOnPrevCycle,jdbcType=BOOLEAN},
+			</if>
+			<if test="record.JobType != null">
+				job_type=#{record.JobType,jdbcType=INTEGER},
+			</if>
+			<if test="record.taskType != null">
+				task_type=#{record.taskType,jdbcType=VARCHAR},
+			</if>
+			<if test="record.submitResult != null">
+				submit_result=#{record.submitResult,jdbcType=VARCHAR},
+			</if>
+			<if test="record.executeResult != null">
+				execute_result=#{record.executeResult,jdbcType=VARCHAR},
+			</if>
+			<if test="record.endTime != null">
+				end_time=#{record.endTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.runCount != null">
+				run_count=#{record.runCount,jdbcType=INTEGER},
+			</if>
+			<if test="record.faileCount != null">
+				faile_count=#{record.faileCount,jdbcType=INTEGER},
+			</if>
+			<if test="record.submitParam != null">
+				submit_param=#{record.submitParam,jdbcType=OTHER,typeHandler=com.hngd.handler.JsonElementTypeHandler},
+			</if>
+			<if test="record.remarks != null">
+				remarks=#{record.remarks,jdbcType=VARCHAR}
+			</if>
+		</set>
+		<if test="_parameter != null">
+      		<include refid="Update_By_Example_Where_Clause" />
+    	</if>
+	</update>
+</mapper>
