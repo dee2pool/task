@@ -44,6 +44,7 @@ public class JobClientServiceImpl implements JobClientService{
 	@Autowired
 	private JobMapper jobMapper;
 	
+	private static final Gson GSON=new Gson();
 	
 	@Override
 	public Result<String> addJob(TaskPo task) {
@@ -63,8 +64,8 @@ public class JobClientServiceImpl implements JobClientService{
 			param.put("jobType",task.getJobType().toString());
 			param.put("taskType",task.getTaskType());
 			param.put("taskName",task.getTaskName());
-			param.put("deviceInfo",task.getTaskDevice().toString());
-			param.put("extParam",task.getSubmitResult());
+			param.put("deviceInfo",GSON.toJson(task.getTaskDevice()));
+			param.put("extParam",GSON.toJson(task.getSubmitParam()));
 			job.setExtParams(param);
 			job.setNeedFeedback(true);
 			job.setReplaceOnExist(true);

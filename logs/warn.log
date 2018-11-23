@@ -1,34 +1,25 @@
-2018-11-22 08:46:32.425 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 08:46:32.450 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 08:49:43.344 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 08:49:43.350 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 09:02:26.993 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 09:02:27.002 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 09:16:17.157 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 09:16:17.163 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 09:21:59.359 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 09:21:59.369 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 09:27:10.115 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 09:27:10.122 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 09:29:11.967 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 09:29:11.975 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 09:55:37.274 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 09:55:37.281 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 09:56:04.498 [NettyServerSelectorThread_-thread-2] WARN  com.github.ltsopensource.jobtracker.support.JobPusher -  [LTS] Job push failed! response command is null!, lts version: 1.6.9, current host: 192.168.0.249
-2018-11-22 09:56:04.498 [NettyServerSelectorThread_-thread-2] WARN  com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] send a request command to channel </192.168.0.249:6070> failed., lts version: 1.6.9, current host: 192.168.0.249
-2018-11-22 09:56:04.500 [NettyServerSelectorThread_-thread-2] WARN  com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=26, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_3544_09-55-37.944_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542850175000"},"job":{"cron":false,"extParams":{"taskType":"录像文件查询","extParam":"{'deviceCode':'123','loginName':'a'}","taskName":"test","jobType":"1","deviceInfo":"[\"{\\u0027deviceCode\\u0027:\\u0027123\\u0027,\\u0027loginName\\u0027:\\u0027a\\u0027}\"]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"7f917b137eab47819cc8bb9655374e0f","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542850175000},"jobId":"B88DF41962D64296BCA8352E75135B4B","jobType":"REAL_TIME","realTaskId":"7f917b137eab47819cc8bb9655374e0f","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542851764486}}, lts version: 1.6.9, current host: 192.168.0.249
-2018-11-22 09:59:55.598 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 09:59:55.605 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 10:05:09.981 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 10:05:09.990 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 10:06:32.689 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 10:06:32.698 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 13:36:01.253 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 13:36:01.253 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 13:38:45.811 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 13:38:45.815 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 13:39:21.225 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542865161225, current=DOWN, previous=UP]
-2018-11-22 13:39:21.773 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@e71308a, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 10:09:07.813 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 10:09:07.823 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 10:11:07.446 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 10:11:07.456 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 10:15:21.905 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 10:15:21.912 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 10:21:54.803 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 10:21:54.810 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 10:24:56.726 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 10:24:56.736 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 10:26:30.732 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 10:26:30.741 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 10:28:16.038 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 10:28:16.045 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 12:19:31.157 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 12:19:31.163 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 12:22:44.638 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 12:22:44.647 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 12:24:16.538 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 12:24:16.541 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 12:27:16.979 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542947236979, current=DOWN, previous=UP]
+2018-11-23 12:27:17.873 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@2722e7a6, lts version: 1.6.9, current host: 192.168.0.249
 java.lang.IllegalStateException: executor not accepting a task
 	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
 	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
@@ -49,28 +40,11 @@ java.lang.IllegalStateException: executor not accepting a task
 	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
 	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
 	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
-2018-11-22 13:39:21.884 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
-2018-11-22 13:42:52.166 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 13:42:52.175 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 13:47:13.387 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 13:47:13.394 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 13:51:38.060 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 13:51:38.068 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 13:54:48.804 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 13:54:48.810 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 13:58:50.929 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 13:58:50.935 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 14:01:02.818 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 14:01:02.828 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 14:02:16.585 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 14:02:16.594 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 14:02:58.714 [LTS-ExecutingJobQueue-Fix-Executor-thread-1] WARN  com.github.ltsopensource.jobtracker.support.checker.ExecutingDeadJobChecker -  [LTS] ExecutableJobQueue already exist:{"cron":false,"extParams":{"taskType":"录像文件查询","taskName":"test","jobType":"1","deviceInfo":"[{\"deviceCode\":\"123\",\"loginName\":\"a\"}]"},"gmtCreated":1542865396432,"gmtModified":1542866578485,"internalExtParams":{"__LTS_Seq_Id":"1542865396432"},"jobId":"9BB1A4200A4C4BB9BBB7A508BA3C747A","jobType":"REAL_TIME","lastGenerateTriggerTime":0,"maxRetryTimes":0,"needFeedback":true,"priority":100,"realTaskId":"2450e211def9459292f555d7b637ab44","relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"repeatedCount":0,"retryTimes":0,"running":false,"submitNodeGroup":"test_jobClient","taskId":"2450e211def9459292f555d7b637ab44","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542865396432}, lts version: 1.6.9, current host: 192.168.0.249
-2018-11-22 14:06:00.427 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 14:06:00.438 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 14:36:59.342 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 14:36:59.345 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 14:51:32.196 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542869492196, current=DOWN, previous=UP]
-2018-11-22 14:51:32.921 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@3c808e9b, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 12:27:17.978 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 13:46:41.243 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 13:46:41.246 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 13:47:24.974 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542952044974, current=DOWN, previous=UP]
+2018-11-23 13:47:25.916 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@4cd19a81, lts version: 1.6.9, current host: 192.168.0.249
 java.lang.IllegalStateException: executor not accepting a task
 	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
 	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
@@ -91,11 +65,13 @@ java.lang.IllegalStateException: executor not accepting a task
 	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
 	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
 	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
-2018-11-22 14:51:33.026 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
-2018-11-22 14:51:58.872 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 14:51:58.876 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 15:09:03.728 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542870543728, current=DOWN, previous=UP]
-2018-11-22 15:09:04.693 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@14950b4a, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 13:47:26.028 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 13:54:40.944 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 13:54:40.951 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 13:56:24.501 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 13:56:24.504 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:01:51.760 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542952911760, current=DOWN, previous=UP]
+2018-11-23 14:01:52.497 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@47672424, lts version: 1.6.9, current host: 192.168.0.249
 java.lang.IllegalStateException: executor not accepting a task
 	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
 	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
@@ -116,11 +92,11 @@ java.lang.IllegalStateException: executor not accepting a task
 	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
 	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
 	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
-2018-11-22 15:09:04.807 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
-2018-11-22 15:12:28.299 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 15:12:28.302 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 15:21:51.543 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542871311543, current=DOWN, previous=UP]
-2018-11-22 15:21:52.133 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@5f5c7b79, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:01:52.601 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:03:47.521 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:03:47.524 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:05:12.406 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542953112406, current=DOWN, previous=UP]
+2018-11-23 14:05:12.535 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@104a786b, lts version: 1.6.9, current host: 192.168.0.249
 java.lang.IllegalStateException: executor not accepting a task
 	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
 	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
@@ -141,11 +117,15 @@ java.lang.IllegalStateException: executor not accepting a task
 	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
 	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
 	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
-2018-11-22 15:21:52.245 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
-2018-11-22 15:22:16.365 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 15:22:16.368 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 15:26:20.732 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542871580732, current=DOWN, previous=UP]
-2018-11-22 15:26:21.310 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@6934a498, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:05:12.639 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:05:52.380 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:05:52.387 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:06:59.587 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:06:59.594 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:08:47.244 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:08:47.247 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:14:12.151 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542953652151, current=DOWN, previous=UP]
+2018-11-23 14:14:12.411 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@5bc8e6d, lts version: 1.6.9, current host: 192.168.0.249
 java.lang.IllegalStateException: executor not accepting a task
 	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
 	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
@@ -166,11 +146,15 @@ java.lang.IllegalStateException: executor not accepting a task
 	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
 	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
 	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
-2018-11-22 15:26:21.422 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
-2018-11-22 15:26:47.914 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 15:26:47.917 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 15:33:45.506 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542872025506, current=DOWN, previous=UP]
-2018-11-22 15:33:46.188 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@7be9bdd4, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:14:12.513 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:17:40.321 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:17:40.328 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:19:00.683 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:19:00.690 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:21:20.007 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:21:20.011 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:24:32.359 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542954272359, current=DOWN, previous=UP]
+2018-11-23 14:24:32.890 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@48a396f8, lts version: 1.6.9, current host: 192.168.0.249
 java.lang.IllegalStateException: executor not accepting a task
 	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
 	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
@@ -191,11 +175,13 @@ java.lang.IllegalStateException: executor not accepting a task
 	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
 	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
 	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
-2018-11-22 15:33:46.300 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
-2018-11-22 16:07:00.057 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 16:07:00.061 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 16:18:30.039 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542874710039, current=DOWN, previous=UP]
-2018-11-22 16:18:30.393 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@44c46f02, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:24:32.994 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:25:40.368 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:25:40.375 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:28:13.002 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:28:13.009 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:33:08.285 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542954788285, current=DOWN, previous=UP]
+2018-11-23 14:33:08.990 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@6ef5c841, lts version: 1.6.9, current host: 192.168.0.249
 java.lang.IllegalStateException: executor not accepting a task
 	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
 	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
@@ -216,11 +202,13 @@ java.lang.IllegalStateException: executor not accepting a task
 	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
 	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
 	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
-2018-11-22 16:18:30.500 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
-2018-11-22 16:19:21.233 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 16:19:21.237 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 16:23:56.414 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542875036414, current=DOWN, previous=UP]
-2018-11-22 16:23:57.078 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@467ad3b4, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:33:09.096 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:42:20.813 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:42:20.821 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:43:22.326 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:43:22.331 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:57:13.697 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542956233697, current=DOWN, previous=UP]
+2018-11-23 14:57:13.939 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@275c5cb3, lts version: 1.6.9, current host: 192.168.0.249
 java.lang.IllegalStateException: executor not accepting a task
 	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
 	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
@@ -241,11 +229,13 @@ java.lang.IllegalStateException: executor not accepting a task
 	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
 	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
 	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
-2018-11-22 16:23:57.190 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
-2018-11-22 16:25:00.661 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 16:25:00.664 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2018-11-22 17:05:26.621 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542877526621, current=DOWN, previous=UP]
-2018-11-22 17:05:26.848 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@76af2079, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:57:14.044 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:57:45.802 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:57:45.853 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:58:40.746 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 14:58:40.750 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-23 15:04:07.252 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542956647252, current=DOWN, previous=UP]
+2018-11-23 15:04:07.691 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@e71308a, lts version: 1.6.9, current host: 192.168.0.249
 java.lang.IllegalStateException: executor not accepting a task
 	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
 	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
@@ -266,4 +256,4 @@ java.lang.IllegalStateException: executor not accepting a task
 	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
 	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
 	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
-2018-11-22 17:05:26.952 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 15:04:07.797 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249

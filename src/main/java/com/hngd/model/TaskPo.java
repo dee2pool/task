@@ -2,6 +2,7 @@ package com.hngd.model;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.validation.constraints.NotNull;
 
@@ -27,7 +28,7 @@ public class TaskPo {
 	private String taskTrackerNodeGroup="test_trade_TaskTracker";
 	//执行任务的设备(json数组)
 	@NotNull
-	private List<String> taskDevice;
+	private List<Map<String,String>> taskDevice;
 	//最大重试次数(默认为0)
 	private Integer maxRetryTimes=0;
 	//cron表达式
@@ -54,7 +55,7 @@ public class TaskPo {
 	//任务失败次数
 	private Integer faileCount;
 	//提交的业务额外参数
-	private String submitParam;
+	private Map<String,String> submitParam;
 	//备注
 	private String remarks;
 
@@ -199,20 +200,20 @@ public class TaskPo {
 	public String getRemarks() {
 		return remarks;
 	}
-
-	public List<String> getTaskDevice() {
+	
+	public List<Map<String, String>> getTaskDevice() {
 		return taskDevice;
 	}
 
-	public void setTaskDevice(List<String> taskDevice) {
+	public void setTaskDevice(List<Map<String, String>> taskDevice) {
 		this.taskDevice = taskDevice;
 	}
 
-	public String getSubmitParam() {
+	public Map<String, String> getSubmitParam() {
 		return submitParam;
 	}
 
-	public void setSubmitParam(String submitParam) {
+	public void setSubmitParam(Map<String, String> submitParam) {
 		this.submitParam = submitParam;
 	}
 

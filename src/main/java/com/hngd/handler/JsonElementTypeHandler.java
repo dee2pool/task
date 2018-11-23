@@ -45,13 +45,13 @@ import java.sql.SQLException;
 
 @MappedTypes({ Object.class })
 public class JsonElementTypeHandler extends BaseTypeHandler<Object> {
-
+	private static final Gson GSON=new Gson();
 	@Override
 	public void setNonNullParameter(PreparedStatement ps, int i, Object parameter, JdbcType jdbcType)
 			throws SQLException {
 		PGobject jsonObject = new PGobject();
 		jsonObject.setType("json");
-		jsonObject.setValue(parameter.toString());
+		jsonObject.setValue(GSON.toJson(parameter));
 		ps.setObject(i, jsonObject);
 	}
 
