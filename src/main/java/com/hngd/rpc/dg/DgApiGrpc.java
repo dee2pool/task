@@ -67,6 +67,18 @@ public final class DgApiGrpc {
               com.hngd.rpc.dg.CommonResponse.getDefaultInstance()))
           .build();
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<com.hngd.rpc.dg.QuryConfigRequest,
+      com.hngd.rpc.dg.CommonResponse> METHOD_QUERY_CONFIG_OPERATION =
+      io.grpc.MethodDescriptor.<com.hngd.rpc.dg.QuryConfigRequest, com.hngd.rpc.dg.CommonResponse>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(generateFullMethodName(
+              "hngdrpcdg.DgApi", "QueryConfigOperation"))
+          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              com.hngd.rpc.dg.QuryConfigRequest.getDefaultInstance()))
+          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              com.hngd.rpc.dg.CommonResponse.getDefaultInstance()))
+          .build();
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static final io.grpc.MethodDescriptor<com.hngd.rpc.dg.PerTaskRequest,
       com.hngd.rpc.dg.CommonResponse> METHOD_PERIODIC_TASK_CONFIG =
       io.grpc.MethodDescriptor.<com.hngd.rpc.dg.PerTaskRequest, com.hngd.rpc.dg.CommonResponse>newBuilder()
@@ -141,6 +153,16 @@ public final class DgApiGrpc {
 
     /**
      * <pre>
+     *定义接口---[配置查询]
+     * </pre>
+     */
+    public void queryConfigOperation(com.hngd.rpc.dg.QuryConfigRequest request,
+        io.grpc.stub.StreamObserver<com.hngd.rpc.dg.CommonResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(METHOD_QUERY_CONFIG_OPERATION, responseObserver);
+    }
+
+    /**
+     * <pre>
      *定义接口---[周期任务配置]
      * </pre>
      */
@@ -172,6 +194,13 @@ public final class DgApiGrpc {
                 com.hngd.rpc.dg.QuryFileRequest,
                 com.hngd.rpc.dg.CommonResponse>(
                   this, METHODID_QUERY_FILE_OPERATION)))
+          .addMethod(
+            METHOD_QUERY_CONFIG_OPERATION,
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.hngd.rpc.dg.QuryConfigRequest,
+                com.hngd.rpc.dg.CommonResponse>(
+                  this, METHODID_QUERY_CONFIG_OPERATION)))
           .addMethod(
             METHOD_PERIODIC_TASK_CONFIG,
             asyncUnaryCall(
@@ -239,6 +268,17 @@ public final class DgApiGrpc {
 
     /**
      * <pre>
+     *定义接口---[配置查询]
+     * </pre>
+     */
+    public void queryConfigOperation(com.hngd.rpc.dg.QuryConfigRequest request,
+        io.grpc.stub.StreamObserver<com.hngd.rpc.dg.CommonResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(METHOD_QUERY_CONFIG_OPERATION, getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      *定义接口---[周期任务配置]
      * </pre>
      */
@@ -298,6 +338,16 @@ public final class DgApiGrpc {
     public com.hngd.rpc.dg.CommonResponse queryFileOperation(com.hngd.rpc.dg.QuryFileRequest request) {
       return blockingUnaryCall(
           getChannel(), METHOD_QUERY_FILE_OPERATION, getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *定义接口---[配置查询]
+     * </pre>
+     */
+    public com.hngd.rpc.dg.CommonResponse queryConfigOperation(com.hngd.rpc.dg.QuryConfigRequest request) {
+      return blockingUnaryCall(
+          getChannel(), METHOD_QUERY_CONFIG_OPERATION, getCallOptions(), request);
     }
 
     /**
@@ -367,6 +417,17 @@ public final class DgApiGrpc {
 
     /**
      * <pre>
+     *定义接口---[配置查询]
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.hngd.rpc.dg.CommonResponse> queryConfigOperation(
+        com.hngd.rpc.dg.QuryConfigRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(METHOD_QUERY_CONFIG_OPERATION, getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      *定义接口---[周期任务配置]
      * </pre>
      */
@@ -380,7 +441,8 @@ public final class DgApiGrpc {
   private static final int METHODID_SET_DOOR_STATUS = 0;
   private static final int METHODID_ITCTALK_OPERATION = 1;
   private static final int METHODID_QUERY_FILE_OPERATION = 2;
-  private static final int METHODID_PERIODIC_TASK_CONFIG = 3;
+  private static final int METHODID_QUERY_CONFIG_OPERATION = 3;
+  private static final int METHODID_PERIODIC_TASK_CONFIG = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -409,6 +471,10 @@ public final class DgApiGrpc {
           break;
         case METHODID_QUERY_FILE_OPERATION:
           serviceImpl.queryFileOperation((com.hngd.rpc.dg.QuryFileRequest) request,
+              (io.grpc.stub.StreamObserver<com.hngd.rpc.dg.CommonResponse>) responseObserver);
+          break;
+        case METHODID_QUERY_CONFIG_OPERATION:
+          serviceImpl.queryConfigOperation((com.hngd.rpc.dg.QuryConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.hngd.rpc.dg.CommonResponse>) responseObserver);
           break;
         case METHODID_PERIODIC_TASK_CONFIG:
@@ -451,6 +517,7 @@ public final class DgApiGrpc {
               .addMethod(METHOD_SET_DOOR_STATUS)
               .addMethod(METHOD_ITCTALK_OPERATION)
               .addMethod(METHOD_QUERY_FILE_OPERATION)
+              .addMethod(METHOD_QUERY_CONFIG_OPERATION)
               .addMethod(METHOD_PERIODIC_TASK_CONFIG)
               .build();
         }

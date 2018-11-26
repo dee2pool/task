@@ -39,7 +39,7 @@ public class JobController {
 	
 	@InitBinder
 	public void onBinderInit(WebDataBinder binder) {
-		binder.registerCustomEditor(Task.class, new GsonEditor(Task.class));
+		binder.registerCustomEditor(TaskPo.class, new GsonEditor(TaskPo.class));
 	}
 	
 	/*添加任务*/

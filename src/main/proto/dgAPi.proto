@@ -22,6 +22,8 @@ service DgApi {
   rpc ITCTalkOperation(ITCTalkOperationRequest) returns (CommonResponse) {}
   //定义接口---[录像查询]
   rpc QueryFileOperation(QuryFileRequest) returns (CommonResponse) {}
+  //定义接口---[配置查询]
+  rpc QueryConfigOperation(QuryConfigRequest) returns (CommonResponse) {}
   //定义接口---[周期任务配置]
   rpc PeriodicTaskConfig(PerTaskRequest) returns (CommonResponse) {}
 }
@@ -97,10 +99,17 @@ message RecordQueryParam{
 
 //录像查询请求
 message QuryFileRequest {
-	repeated DeviceInfo devInfo           = 1;
-	optional RecordQueryParam  reQueryParam   = 2;
-	
+	required DeviceInfo devInfo               = 1;//设备信息
+	optional RecordQueryParam  reQueryParam   = 2;//录像查询参数
+	optional string		taskID                = 3;//任务ID（CMS根据任务ID关联查询应答）
 }
+
+//配置查询请求
+message QuryConfigRequest {
+	required DeviceInfo devInfo               = 1;//设备信息
+	optional string		taskID                = 2;//任务ID（CMS根据任务ID关联查询应答）
+}
+
 
 //周期任务配置请求
 message PerTaskRequest {

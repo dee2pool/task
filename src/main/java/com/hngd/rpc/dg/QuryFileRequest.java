@@ -19,7 +19,7 @@ public  final class QuryFileRequest extends
     super(builder);
   }
   private QuryFileRequest() {
-    devInfo_ = java.util.Collections.emptyList();
+    taskID_ = "";
   }
 
   @java.lang.Override
@@ -51,17 +51,21 @@ public  final class QuryFileRequest extends
             break;
           }
           case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              devInfo_ = new java.util.ArrayList<com.hngd.rpc.dg.DeviceInfo>();
-              mutable_bitField0_ |= 0x00000001;
+            com.hngd.rpc.dg.DeviceInfo.Builder subBuilder = null;
+            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+              subBuilder = devInfo_.toBuilder();
             }
-            devInfo_.add(
-                input.readMessage(com.hngd.rpc.dg.DeviceInfo.PARSER, extensionRegistry));
+            devInfo_ = input.readMessage(com.hngd.rpc.dg.DeviceInfo.PARSER, extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(devInfo_);
+              devInfo_ = subBuilder.buildPartial();
+            }
+            bitField0_ |= 0x00000001;
             break;
           }
           case 18: {
             com.hngd.rpc.dg.RecordQueryParam.Builder subBuilder = null;
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            if (((bitField0_ & 0x00000002) == 0x00000002)) {
               subBuilder = reQueryParam_.toBuilder();
             }
             reQueryParam_ = input.readMessage(com.hngd.rpc.dg.RecordQueryParam.PARSER, extensionRegistry);
@@ -69,7 +73,13 @@ public  final class QuryFileRequest extends
               subBuilder.mergeFrom(reQueryParam_);
               reQueryParam_ = subBuilder.buildPartial();
             }
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
+            break;
+          }
+          case 26: {
+            com.google.protobuf.ByteString bs = input.readBytes();
+            bitField0_ |= 0x00000004;
+            taskID_ = bs;
             break;
           }
         }
@@ -80,9 +90,6 @@ public  final class QuryFileRequest extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-        devInfo_ = java.util.Collections.unmodifiableList(devInfo_);
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -101,59 +108,123 @@ public  final class QuryFileRequest extends
 
   private int bitField0_;
   public static final int DEVINFO_FIELD_NUMBER = 1;
-  private java.util.List<com.hngd.rpc.dg.DeviceInfo> devInfo_;
+  private com.hngd.rpc.dg.DeviceInfo devInfo_;
   /**
-   * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
+   * <pre>
+   *设备信息
+   * </pre>
+   *
+   * <code>required .hngdrpcdg.DeviceInfo devInfo = 1;</code>
    */
-  public java.util.List<com.hngd.rpc.dg.DeviceInfo> getDevInfoList() {
-    return devInfo_;
+  public boolean hasDevInfo() {
+    return ((bitField0_ & 0x00000001) == 0x00000001);
   }
   /**
-   * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
+   * <pre>
+   *设备信息
+   * </pre>
+   *
+   * <code>required .hngdrpcdg.DeviceInfo devInfo = 1;</code>
    */
-  public java.util.List<? extends com.hngd.rpc.dg.DeviceInfoOrBuilder> 
-      getDevInfoOrBuilderList() {
-    return devInfo_;
+  public com.hngd.rpc.dg.DeviceInfo getDevInfo() {
+    return devInfo_ == null ? com.hngd.rpc.dg.DeviceInfo.getDefaultInstance() : devInfo_;
   }
   /**
-   * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
+   * <pre>
+   *设备信息
+   * </pre>
+   *
+   * <code>required .hngdrpcdg.DeviceInfo devInfo = 1;</code>
    */
-  public int getDevInfoCount() {
-    return devInfo_.size();
-  }
-  /**
-   * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
-   */
-  public com.hngd.rpc.dg.DeviceInfo getDevInfo(int index) {
-    return devInfo_.get(index);
-  }
-  /**
-   * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
-   */
-  public com.hngd.rpc.dg.DeviceInfoOrBuilder getDevInfoOrBuilder(
-      int index) {
-    return devInfo_.get(index);
+  public com.hngd.rpc.dg.DeviceInfoOrBuilder getDevInfoOrBuilder() {
+    return devInfo_ == null ? com.hngd.rpc.dg.DeviceInfo.getDefaultInstance() : devInfo_;
   }
 
   public static final int REQUERYPARAM_FIELD_NUMBER = 2;
   private com.hngd.rpc.dg.RecordQueryParam reQueryParam_;
   /**
+   * <pre>
+   *录像查询参数
+   * </pre>
+   *
    * <code>optional .hngdrpcdg.RecordQueryParam reQueryParam = 2;</code>
    */
   public boolean hasReQueryParam() {
-    return ((bitField0_ & 0x00000001) == 0x00000001);
+    return ((bitField0_ & 0x00000002) == 0x00000002);
   }
   /**
+   * <pre>
+   *录像查询参数
+   * </pre>
+   *
    * <code>optional .hngdrpcdg.RecordQueryParam reQueryParam = 2;</code>
    */
   public com.hngd.rpc.dg.RecordQueryParam getReQueryParam() {
     return reQueryParam_ == null ? com.hngd.rpc.dg.RecordQueryParam.getDefaultInstance() : reQueryParam_;
   }
   /**
+   * <pre>
+   *录像查询参数
+   * </pre>
+   *
    * <code>optional .hngdrpcdg.RecordQueryParam reQueryParam = 2;</code>
    */
   public com.hngd.rpc.dg.RecordQueryParamOrBuilder getReQueryParamOrBuilder() {
     return reQueryParam_ == null ? com.hngd.rpc.dg.RecordQueryParam.getDefaultInstance() : reQueryParam_;
+  }
+
+  public static final int TASKID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object taskID_;
+  /**
+   * <pre>
+   *任务ID（CMS根据任务ID关联查询应答）
+   * </pre>
+   *
+   * <code>optional string taskID = 3;</code>
+   */
+  public boolean hasTaskID() {
+    return ((bitField0_ & 0x00000004) == 0x00000004);
+  }
+  /**
+   * <pre>
+   *任务ID（CMS根据任务ID关联查询应答）
+   * </pre>
+   *
+   * <code>optional string taskID = 3;</code>
+   */
+  public java.lang.String getTaskID() {
+    java.lang.Object ref = taskID_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (bs.isValidUtf8()) {
+        taskID_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *任务ID（CMS根据任务ID关联查询应答）
+   * </pre>
+   *
+   * <code>optional string taskID = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getTaskIDBytes() {
+    java.lang.Object ref = taskID_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskID_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -162,11 +233,13 @@ public  final class QuryFileRequest extends
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    for (int i = 0; i < getDevInfoCount(); i++) {
-      if (!getDevInfo(i).isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
+    if (!hasDevInfo()) {
+      memoizedIsInitialized = 0;
+      return false;
+    }
+    if (!getDevInfo().isInitialized()) {
+      memoizedIsInitialized = 0;
+      return false;
     }
     memoizedIsInitialized = 1;
     return true;
@@ -174,11 +247,14 @@ public  final class QuryFileRequest extends
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < devInfo_.size(); i++) {
-      output.writeMessage(1, devInfo_.get(i));
-    }
     if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      output.writeMessage(1, getDevInfo());
+    }
+    if (((bitField0_ & 0x00000002) == 0x00000002)) {
       output.writeMessage(2, getReQueryParam());
+    }
+    if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, taskID_);
     }
     unknownFields.writeTo(output);
   }
@@ -188,13 +264,16 @@ public  final class QuryFileRequest extends
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < devInfo_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, devInfo_.get(i));
-    }
     if (((bitField0_ & 0x00000001) == 0x00000001)) {
       size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, getDevInfo());
+    }
+    if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getReQueryParam());
+    }
+    if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, taskID_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -213,12 +292,20 @@ public  final class QuryFileRequest extends
     com.hngd.rpc.dg.QuryFileRequest other = (com.hngd.rpc.dg.QuryFileRequest) obj;
 
     boolean result = true;
-    result = result && getDevInfoList()
-        .equals(other.getDevInfoList());
+    result = result && (hasDevInfo() == other.hasDevInfo());
+    if (hasDevInfo()) {
+      result = result && getDevInfo()
+          .equals(other.getDevInfo());
+    }
     result = result && (hasReQueryParam() == other.hasReQueryParam());
     if (hasReQueryParam()) {
       result = result && getReQueryParam()
           .equals(other.getReQueryParam());
+    }
+    result = result && (hasTaskID() == other.hasTaskID());
+    if (hasTaskID()) {
+      result = result && getTaskID()
+          .equals(other.getTaskID());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -231,13 +318,17 @@ public  final class QuryFileRequest extends
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getDevInfoCount() > 0) {
+    if (hasDevInfo()) {
       hash = (37 * hash) + DEVINFO_FIELD_NUMBER;
-      hash = (53 * hash) + getDevInfoList().hashCode();
+      hash = (53 * hash) + getDevInfo().hashCode();
     }
     if (hasReQueryParam()) {
       hash = (37 * hash) + REQUERYPARAM_FIELD_NUMBER;
       hash = (53 * hash) + getReQueryParam().hashCode();
+    }
+    if (hasTaskID()) {
+      hash = (37 * hash) + TASKID_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskID().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -375,17 +466,19 @@ public  final class QuryFileRequest extends
     public Builder clear() {
       super.clear();
       if (devInfoBuilder_ == null) {
-        devInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        devInfo_ = null;
       } else {
         devInfoBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (reQueryParamBuilder_ == null) {
         reQueryParam_ = null;
       } else {
         reQueryParamBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      taskID_ = "";
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -410,23 +503,26 @@ public  final class QuryFileRequest extends
       com.hngd.rpc.dg.QuryFileRequest result = new com.hngd.rpc.dg.QuryFileRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        to_bitField0_ |= 0x00000001;
+      }
       if (devInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          devInfo_ = java.util.Collections.unmodifiableList(devInfo_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
         result.devInfo_ = devInfo_;
       } else {
         result.devInfo_ = devInfoBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000002;
       }
       if (reQueryParamBuilder_ == null) {
         result.reQueryParam_ = reQueryParam_;
       } else {
         result.reQueryParam_ = reQueryParamBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        to_bitField0_ |= 0x00000004;
+      }
+      result.taskID_ = taskID_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -469,34 +565,16 @@ public  final class QuryFileRequest extends
 
     public Builder mergeFrom(com.hngd.rpc.dg.QuryFileRequest other) {
       if (other == com.hngd.rpc.dg.QuryFileRequest.getDefaultInstance()) return this;
-      if (devInfoBuilder_ == null) {
-        if (!other.devInfo_.isEmpty()) {
-          if (devInfo_.isEmpty()) {
-            devInfo_ = other.devInfo_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureDevInfoIsMutable();
-            devInfo_.addAll(other.devInfo_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.devInfo_.isEmpty()) {
-          if (devInfoBuilder_.isEmpty()) {
-            devInfoBuilder_.dispose();
-            devInfoBuilder_ = null;
-            devInfo_ = other.devInfo_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            devInfoBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getDevInfoFieldBuilder() : null;
-          } else {
-            devInfoBuilder_.addAllMessages(other.devInfo_);
-          }
-        }
+      if (other.hasDevInfo()) {
+        mergeDevInfo(other.getDevInfo());
       }
       if (other.hasReQueryParam()) {
         mergeReQueryParam(other.getReQueryParam());
+      }
+      if (other.hasTaskID()) {
+        bitField0_ |= 0x00000004;
+        taskID_ = other.taskID_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -504,10 +582,11 @@ public  final class QuryFileRequest extends
     }
 
     public final boolean isInitialized() {
-      for (int i = 0; i < getDevInfoCount(); i++) {
-        if (!getDevInfo(i).isInitialized()) {
-          return false;
-        }
+      if (!hasDevInfo()) {
+        return false;
+      }
+      if (!getDevInfo().isInitialized()) {
+        return false;
       }
       return true;
     }
@@ -531,239 +610,153 @@ public  final class QuryFileRequest extends
     }
     private int bitField0_;
 
-    private java.util.List<com.hngd.rpc.dg.DeviceInfo> devInfo_ =
-      java.util.Collections.emptyList();
-    private void ensureDevInfoIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        devInfo_ = new java.util.ArrayList<com.hngd.rpc.dg.DeviceInfo>(devInfo_);
-        bitField0_ |= 0x00000001;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
+    private com.hngd.rpc.dg.DeviceInfo devInfo_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
         com.hngd.rpc.dg.DeviceInfo, com.hngd.rpc.dg.DeviceInfo.Builder, com.hngd.rpc.dg.DeviceInfoOrBuilder> devInfoBuilder_;
-
     /**
-     * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
+     * <pre>
+     *设备信息
+     * </pre>
+     *
+     * <code>required .hngdrpcdg.DeviceInfo devInfo = 1;</code>
      */
-    public java.util.List<com.hngd.rpc.dg.DeviceInfo> getDevInfoList() {
+    public boolean hasDevInfo() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <pre>
+     *设备信息
+     * </pre>
+     *
+     * <code>required .hngdrpcdg.DeviceInfo devInfo = 1;</code>
+     */
+    public com.hngd.rpc.dg.DeviceInfo getDevInfo() {
       if (devInfoBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(devInfo_);
+        return devInfo_ == null ? com.hngd.rpc.dg.DeviceInfo.getDefaultInstance() : devInfo_;
       } else {
-        return devInfoBuilder_.getMessageList();
+        return devInfoBuilder_.getMessage();
       }
     }
     /**
-     * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
+     * <pre>
+     *设备信息
+     * </pre>
+     *
+     * <code>required .hngdrpcdg.DeviceInfo devInfo = 1;</code>
      */
-    public int getDevInfoCount() {
+    public Builder setDevInfo(com.hngd.rpc.dg.DeviceInfo value) {
       if (devInfoBuilder_ == null) {
-        return devInfo_.size();
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        devInfo_ = value;
+        onChanged();
       } else {
-        return devInfoBuilder_.getCount();
+        devInfoBuilder_.setMessage(value);
       }
+      bitField0_ |= 0x00000001;
+      return this;
     }
     /**
-     * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
-     */
-    public com.hngd.rpc.dg.DeviceInfo getDevInfo(int index) {
-      if (devInfoBuilder_ == null) {
-        return devInfo_.get(index);
-      } else {
-        return devInfoBuilder_.getMessage(index);
-      }
-    }
-    /**
-     * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
+     * <pre>
+     *设备信息
+     * </pre>
+     *
+     * <code>required .hngdrpcdg.DeviceInfo devInfo = 1;</code>
      */
     public Builder setDevInfo(
-        int index, com.hngd.rpc.dg.DeviceInfo value) {
-      if (devInfoBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureDevInfoIsMutable();
-        devInfo_.set(index, value);
-        onChanged();
-      } else {
-        devInfoBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
-     */
-    public Builder setDevInfo(
-        int index, com.hngd.rpc.dg.DeviceInfo.Builder builderForValue) {
-      if (devInfoBuilder_ == null) {
-        ensureDevInfoIsMutable();
-        devInfo_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        devInfoBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
-     */
-    public Builder addDevInfo(com.hngd.rpc.dg.DeviceInfo value) {
-      if (devInfoBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureDevInfoIsMutable();
-        devInfo_.add(value);
-        onChanged();
-      } else {
-        devInfoBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
-     */
-    public Builder addDevInfo(
-        int index, com.hngd.rpc.dg.DeviceInfo value) {
-      if (devInfoBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureDevInfoIsMutable();
-        devInfo_.add(index, value);
-        onChanged();
-      } else {
-        devInfoBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
-     */
-    public Builder addDevInfo(
         com.hngd.rpc.dg.DeviceInfo.Builder builderForValue) {
       if (devInfoBuilder_ == null) {
-        ensureDevInfoIsMutable();
-        devInfo_.add(builderForValue.build());
+        devInfo_ = builderForValue.build();
         onChanged();
       } else {
-        devInfoBuilder_.addMessage(builderForValue.build());
+        devInfoBuilder_.setMessage(builderForValue.build());
       }
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
-     * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
+     * <pre>
+     *设备信息
+     * </pre>
+     *
+     * <code>required .hngdrpcdg.DeviceInfo devInfo = 1;</code>
      */
-    public Builder addDevInfo(
-        int index, com.hngd.rpc.dg.DeviceInfo.Builder builderForValue) {
+    public Builder mergeDevInfo(com.hngd.rpc.dg.DeviceInfo value) {
       if (devInfoBuilder_ == null) {
-        ensureDevInfoIsMutable();
-        devInfo_.add(index, builderForValue.build());
+        if (((bitField0_ & 0x00000001) == 0x00000001) &&
+            devInfo_ != null &&
+            devInfo_ != com.hngd.rpc.dg.DeviceInfo.getDefaultInstance()) {
+          devInfo_ =
+            com.hngd.rpc.dg.DeviceInfo.newBuilder(devInfo_).mergeFrom(value).buildPartial();
+        } else {
+          devInfo_ = value;
+        }
         onChanged();
       } else {
-        devInfoBuilder_.addMessage(index, builderForValue.build());
+        devInfoBuilder_.mergeFrom(value);
       }
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
-     * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
-     */
-    public Builder addAllDevInfo(
-        java.lang.Iterable<? extends com.hngd.rpc.dg.DeviceInfo> values) {
-      if (devInfoBuilder_ == null) {
-        ensureDevInfoIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, devInfo_);
-        onChanged();
-      } else {
-        devInfoBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
+     * <pre>
+     *设备信息
+     * </pre>
+     *
+     * <code>required .hngdrpcdg.DeviceInfo devInfo = 1;</code>
      */
     public Builder clearDevInfo() {
       if (devInfoBuilder_ == null) {
-        devInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        devInfo_ = null;
         onChanged();
       } else {
         devInfoBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
     /**
-     * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
+     * <pre>
+     *设备信息
+     * </pre>
+     *
+     * <code>required .hngdrpcdg.DeviceInfo devInfo = 1;</code>
      */
-    public Builder removeDevInfo(int index) {
-      if (devInfoBuilder_ == null) {
-        ensureDevInfoIsMutable();
-        devInfo_.remove(index);
-        onChanged();
-      } else {
-        devInfoBuilder_.remove(index);
-      }
-      return this;
+    public com.hngd.rpc.dg.DeviceInfo.Builder getDevInfoBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getDevInfoFieldBuilder().getBuilder();
     }
     /**
-     * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
+     * <pre>
+     *设备信息
+     * </pre>
+     *
+     * <code>required .hngdrpcdg.DeviceInfo devInfo = 1;</code>
      */
-    public com.hngd.rpc.dg.DeviceInfo.Builder getDevInfoBuilder(
-        int index) {
-      return getDevInfoFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
-     */
-    public com.hngd.rpc.dg.DeviceInfoOrBuilder getDevInfoOrBuilder(
-        int index) {
-      if (devInfoBuilder_ == null) {
-        return devInfo_.get(index);  } else {
-        return devInfoBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
-     */
-    public java.util.List<? extends com.hngd.rpc.dg.DeviceInfoOrBuilder> 
-         getDevInfoOrBuilderList() {
+    public com.hngd.rpc.dg.DeviceInfoOrBuilder getDevInfoOrBuilder() {
       if (devInfoBuilder_ != null) {
-        return devInfoBuilder_.getMessageOrBuilderList();
+        return devInfoBuilder_.getMessageOrBuilder();
       } else {
-        return java.util.Collections.unmodifiableList(devInfo_);
+        return devInfo_ == null ?
+            com.hngd.rpc.dg.DeviceInfo.getDefaultInstance() : devInfo_;
       }
     }
     /**
-     * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
+     * <pre>
+     *设备信息
+     * </pre>
+     *
+     * <code>required .hngdrpcdg.DeviceInfo devInfo = 1;</code>
      */
-    public com.hngd.rpc.dg.DeviceInfo.Builder addDevInfoBuilder() {
-      return getDevInfoFieldBuilder().addBuilder(
-          com.hngd.rpc.dg.DeviceInfo.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
-     */
-    public com.hngd.rpc.dg.DeviceInfo.Builder addDevInfoBuilder(
-        int index) {
-      return getDevInfoFieldBuilder().addBuilder(
-          index, com.hngd.rpc.dg.DeviceInfo.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .hngdrpcdg.DeviceInfo devInfo = 1;</code>
-     */
-    public java.util.List<com.hngd.rpc.dg.DeviceInfo.Builder> 
-         getDevInfoBuilderList() {
-      return getDevInfoFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilderV3<
         com.hngd.rpc.dg.DeviceInfo, com.hngd.rpc.dg.DeviceInfo.Builder, com.hngd.rpc.dg.DeviceInfoOrBuilder> 
         getDevInfoFieldBuilder() {
       if (devInfoBuilder_ == null) {
-        devInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+        devInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.hngd.rpc.dg.DeviceInfo, com.hngd.rpc.dg.DeviceInfo.Builder, com.hngd.rpc.dg.DeviceInfoOrBuilder>(
-                devInfo_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
+                getDevInfo(),
                 getParentForChildren(),
                 isClean());
         devInfo_ = null;
@@ -775,12 +768,20 @@ public  final class QuryFileRequest extends
     private com.google.protobuf.SingleFieldBuilderV3<
         com.hngd.rpc.dg.RecordQueryParam, com.hngd.rpc.dg.RecordQueryParam.Builder, com.hngd.rpc.dg.RecordQueryParamOrBuilder> reQueryParamBuilder_;
     /**
+     * <pre>
+     *录像查询参数
+     * </pre>
+     *
      * <code>optional .hngdrpcdg.RecordQueryParam reQueryParam = 2;</code>
      */
     public boolean hasReQueryParam() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
+     * <pre>
+     *录像查询参数
+     * </pre>
+     *
      * <code>optional .hngdrpcdg.RecordQueryParam reQueryParam = 2;</code>
      */
     public com.hngd.rpc.dg.RecordQueryParam getReQueryParam() {
@@ -791,6 +792,10 @@ public  final class QuryFileRequest extends
       }
     }
     /**
+     * <pre>
+     *录像查询参数
+     * </pre>
+     *
      * <code>optional .hngdrpcdg.RecordQueryParam reQueryParam = 2;</code>
      */
     public Builder setReQueryParam(com.hngd.rpc.dg.RecordQueryParam value) {
@@ -807,6 +812,10 @@ public  final class QuryFileRequest extends
       return this;
     }
     /**
+     * <pre>
+     *录像查询参数
+     * </pre>
+     *
      * <code>optional .hngdrpcdg.RecordQueryParam reQueryParam = 2;</code>
      */
     public Builder setReQueryParam(
@@ -821,6 +830,10 @@ public  final class QuryFileRequest extends
       return this;
     }
     /**
+     * <pre>
+     *录像查询参数
+     * </pre>
+     *
      * <code>optional .hngdrpcdg.RecordQueryParam reQueryParam = 2;</code>
      */
     public Builder mergeReQueryParam(com.hngd.rpc.dg.RecordQueryParam value) {
@@ -841,6 +854,10 @@ public  final class QuryFileRequest extends
       return this;
     }
     /**
+     * <pre>
+     *录像查询参数
+     * </pre>
+     *
      * <code>optional .hngdrpcdg.RecordQueryParam reQueryParam = 2;</code>
      */
     public Builder clearReQueryParam() {
@@ -854,6 +871,10 @@ public  final class QuryFileRequest extends
       return this;
     }
     /**
+     * <pre>
+     *录像查询参数
+     * </pre>
+     *
      * <code>optional .hngdrpcdg.RecordQueryParam reQueryParam = 2;</code>
      */
     public com.hngd.rpc.dg.RecordQueryParam.Builder getReQueryParamBuilder() {
@@ -862,6 +883,10 @@ public  final class QuryFileRequest extends
       return getReQueryParamFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     *录像查询参数
+     * </pre>
+     *
      * <code>optional .hngdrpcdg.RecordQueryParam reQueryParam = 2;</code>
      */
     public com.hngd.rpc.dg.RecordQueryParamOrBuilder getReQueryParamOrBuilder() {
@@ -873,6 +898,10 @@ public  final class QuryFileRequest extends
       }
     }
     /**
+     * <pre>
+     *录像查询参数
+     * </pre>
+     *
      * <code>optional .hngdrpcdg.RecordQueryParam reQueryParam = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -887,6 +916,106 @@ public  final class QuryFileRequest extends
         reQueryParam_ = null;
       }
       return reQueryParamBuilder_;
+    }
+
+    private java.lang.Object taskID_ = "";
+    /**
+     * <pre>
+     *任务ID（CMS根据任务ID关联查询应答）
+     * </pre>
+     *
+     * <code>optional string taskID = 3;</code>
+     */
+    public boolean hasTaskID() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <pre>
+     *任务ID（CMS根据任务ID关联查询应答）
+     * </pre>
+     *
+     * <code>optional string taskID = 3;</code>
+     */
+    public java.lang.String getTaskID() {
+      java.lang.Object ref = taskID_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          taskID_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *任务ID（CMS根据任务ID关联查询应答）
+     * </pre>
+     *
+     * <code>optional string taskID = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTaskIDBytes() {
+      java.lang.Object ref = taskID_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskID_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *任务ID（CMS根据任务ID关联查询应答）
+     * </pre>
+     *
+     * <code>optional string taskID = 3;</code>
+     */
+    public Builder setTaskID(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+      taskID_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *任务ID（CMS根据任务ID关联查询应答）
+     * </pre>
+     *
+     * <code>optional string taskID = 3;</code>
+     */
+    public Builder clearTaskID() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      taskID_ = getDefaultInstance().getTaskID();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *任务ID（CMS根据任务ID关联查询应答）
+     * </pre>
+     *
+     * <code>optional string taskID = 3;</code>
+     */
+    public Builder setTaskIDBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+      taskID_ = value;
+      onChanged();
+      return this;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

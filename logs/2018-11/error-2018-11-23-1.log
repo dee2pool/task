@@ -1,0 +1,690 @@
+2018-11-23 10:26:56.529 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:42) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+Caused by: java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.add(Unknown Source) ~[?:1.8.0_171]
+	at java.lang.Runtime.addShutdownHook(Unknown Source) ~[?:1.8.0_171]
+	at org.mapdb.Engine$CloseOnJVMShutdown.<init>(Engine.java:437) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.makeEngine(DBMaker.java:1518) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.make(DBMaker.java:1284) ~[mapdb-2.0-beta10.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 10:26:56.557 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=14, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_9792_10-26-31.436_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542940013675"},"job":{"cron":false,"extParams":{"extParam":"{\"pa\":\"参数\"}","taskName":"测试业务","jobType":"1","deviceInfo":"null"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"e62f591aa1be408bb6c1f927d9c4db6f","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542940013675},"jobId":"D88AA6DC1FC24F9FAD72DBE3A5EC0EBE","jobType":"REAL_TIME","realTaskId":"e62f591aa1be408bb6c1f927d9c4db6f","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542940016318}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 10:26:58.280 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.getLock(AbstractFailStore.java:48) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:33) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 10:26:58.282 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=20, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_9792_10-26-31.436_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542940013675"},"job":{"cron":false,"extParams":{"extParam":"{\"pa\":\"参数\"}","taskName":"测试业务","jobType":"1","deviceInfo":"null"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"e62f591aa1be408bb6c1f927d9c4db6f","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542940013675},"jobId":"D88AA6DC1FC24F9FAD72DBE3A5EC0EBE","jobType":"REAL_TIME","realTaskId":"e62f591aa1be408bb6c1f927d9c4db6f","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542940018269}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 10:28:39.784 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:42) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+Caused by: java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.add(Unknown Source) ~[?:1.8.0_171]
+	at java.lang.Runtime.addShutdownHook(Unknown Source) ~[?:1.8.0_171]
+	at org.mapdb.Engine$CloseOnJVMShutdown.<init>(Engine.java:437) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.makeEngine(DBMaker.java:1518) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.make(DBMaker.java:1284) ~[mapdb-2.0-beta10.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 10:28:39.791 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=10, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_7476_10-28-16.758_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542940013675"},"job":{"cron":false,"extParams":{"extParam":"{\"pa\":\"参数\"}","taskName":"测试业务","jobType":"1","deviceInfo":"null"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"e62f591aa1be408bb6c1f927d9c4db6f","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542940013675},"jobId":"D88AA6DC1FC24F9FAD72DBE3A5EC0EBE","jobType":"REAL_TIME","realTaskId":"e62f591aa1be408bb6c1f927d9c4db6f","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542940119573}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 10:28:40.459 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.getLock(AbstractFailStore.java:48) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:33) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 10:28:40.460 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=14, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_7476_10-28-16.758_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542940118968"},"job":{"cron":false,"extParams":{"extParam":"{\"pa\":\"参数\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"deviceCode\":\"1001\",\"deviceName\":\"设备1\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"4be9862575ae4ef5b674ceb87826a1e2","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542940118968},"jobId":"95B3BB4BDEEC4D4BB12EEFECA4590566","jobType":"REAL_TIME","realTaskId":"4be9862575ae4ef5b674ceb87826a1e2","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542940120455}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 10:28:41.472 [AbstractClientNode-thread-3] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.getLock(AbstractFailStore.java:48) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:33) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 10:28:41.473 [AbstractClientNode-thread-3] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=18, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_7476_10-28-16.758_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542940013675"},"job":{"cron":false,"extParams":{"extParam":"{\"pa\":\"参数\"}","taskName":"测试业务","jobType":"1","deviceInfo":"null"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"e62f591aa1be408bb6c1f927d9c4db6f","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542940013675},"jobId":"D88AA6DC1FC24F9FAD72DBE3A5EC0EBE","jobType":"REAL_TIME","realTaskId":"e62f591aa1be408bb6c1f927d9c4db6f","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542940121464}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 10:28:42.501 [AbstractClientNode-thread-4] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.getLock(AbstractFailStore.java:48) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:33) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 10:28:42.502 [AbstractClientNode-thread-4] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=22, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_7476_10-28-16.758_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542940118968"},"job":{"cron":false,"extParams":{"extParam":"{\"pa\":\"参数\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"deviceCode\":\"1001\",\"deviceName\":\"设备1\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"4be9862575ae4ef5b674ceb87826a1e2","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542940118968},"jobId":"95B3BB4BDEEC4D4BB12EEFECA4590566","jobType":"REAL_TIME","realTaskId":"4be9862575ae4ef5b674ceb87826a1e2","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542940122494}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 12:19:55.183 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:42) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+Caused by: java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.add(Unknown Source) ~[?:1.8.0_171]
+	at java.lang.Runtime.addShutdownHook(Unknown Source) ~[?:1.8.0_171]
+	at org.mapdb.Engine$CloseOnJVMShutdown.<init>(Engine.java:437) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.makeEngine(DBMaker.java:1518) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.make(DBMaker.java:1284) ~[mapdb-2.0-beta10.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 12:19:55.189 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=8, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_10992_12-19-31.803_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542940118968"},"job":{"cron":false,"extParams":{"extParam":"{\"pa\":\"参数\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"deviceCode\":\"1001\",\"deviceName\":\"设备1\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"4be9862575ae4ef5b674ceb87826a1e2","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542940118968},"jobId":"95B3BB4BDEEC4D4BB12EEFECA4590566","jobType":"REAL_TIME","realTaskId":"4be9862575ae4ef5b674ceb87826a1e2","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542946794933}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 12:19:56.918 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.getLock(AbstractFailStore.java:48) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:33) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 12:19:56.920 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=14, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_10992_12-19-31.803_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542940118968"},"job":{"cron":false,"extParams":{"extParam":"{\"pa\":\"参数\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"deviceCode\":\"1001\",\"deviceName\":\"设备1\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"4be9862575ae4ef5b674ceb87826a1e2","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542940118968},"jobId":"95B3BB4BDEEC4D4BB12EEFECA4590566","jobType":"REAL_TIME","realTaskId":"4be9862575ae4ef5b674ceb87826a1e2","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542946796910}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 12:23:08.189 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:42) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+Caused by: java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.add(Unknown Source) ~[?:1.8.0_171]
+	at java.lang.Runtime.addShutdownHook(Unknown Source) ~[?:1.8.0_171]
+	at org.mapdb.Engine$CloseOnJVMShutdown.<init>(Engine.java:437) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.makeEngine(DBMaker.java:1518) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.make(DBMaker.java:1284) ~[mapdb-2.0-beta10.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 12:23:08.197 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=10, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_8496_12-22-45.295_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542940118968"},"job":{"cron":false,"extParams":{"extParam":"{\"pa\":\"参数\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"deviceCode\":\"1001\",\"deviceName\":\"设备1\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"4be9862575ae4ef5b674ceb87826a1e2","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542940118968},"jobId":"95B3BB4BDEEC4D4BB12EEFECA4590566","jobType":"REAL_TIME","realTaskId":"4be9862575ae4ef5b674ceb87826a1e2","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542946987997}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 12:23:09.025 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.getLock(AbstractFailStore.java:48) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:33) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 12:23:09.026 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=14, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_8496_12-22-45.295_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542946987504"},"job":{"cron":false,"extParams":{"extParam":"{\"subStream\":\"1\",\"startTime\":\"1542773812\",\"endTime\":\"1542946612\",\"fileType\":\"All\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"loginName\":\"admin\",\"deviceCode\":\"1001\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"3e3b120012a04597ade89658a1f279e7","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542946987504},"jobId":"AC462DED484A40C3809FFD0FC7B628D8","jobType":"REAL_TIME","realTaskId":"3e3b120012a04597ade89658a1f279e7","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542946989021}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 12:23:10.066 [AbstractClientNode-thread-3] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.getLock(AbstractFailStore.java:48) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:33) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 12:23:10.069 [AbstractClientNode-thread-3] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=18, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_8496_12-22-45.295_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542940118968"},"job":{"cron":false,"extParams":{"extParam":"{\"pa\":\"参数\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"deviceCode\":\"1001\",\"deviceName\":\"设备1\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"4be9862575ae4ef5b674ceb87826a1e2","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542940118968},"jobId":"95B3BB4BDEEC4D4BB12EEFECA4590566","jobType":"REAL_TIME","realTaskId":"4be9862575ae4ef5b674ceb87826a1e2","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542946990052}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 12:23:11.076 [AbstractClientNode-thread-4] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.getLock(AbstractFailStore.java:48) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:33) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 12:23:11.089 [AbstractClientNode-thread-4] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=22, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_8496_12-22-45.295_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542946987504"},"job":{"cron":false,"extParams":{"extParam":"{\"subStream\":\"1\",\"startTime\":\"1542773812\",\"endTime\":\"1542946612\",\"fileType\":\"All\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"loginName\":\"admin\",\"deviceCode\":\"1001\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"3e3b120012a04597ade89658a1f279e7","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542946987504},"jobId":"AC462DED484A40C3809FFD0FC7B628D8","jobType":"REAL_TIME","realTaskId":"3e3b120012a04597ade89658a1f279e7","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542946991060}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 13:55:05.612 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:42) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+Caused by: java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.add(Unknown Source) ~[?:1.8.0_171]
+	at java.lang.Runtime.addShutdownHook(Unknown Source) ~[?:1.8.0_171]
+	at org.mapdb.Engine$CloseOnJVMShutdown.<init>(Engine.java:437) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.makeEngine(DBMaker.java:1518) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.make(DBMaker.java:1284) ~[mapdb-2.0-beta10.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 13:55:05.618 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=12, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_8320_13-54-41.658_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542952503961"},"job":{"cron":false,"extParams":{"extParam":"{\"subStream\":\"1\",\"startTime\":\"1542773812\",\"endTime\":\"1542946612\",\"fileType\":\"All\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"loginName\":\"admin\",\"deviceCode\":\"1001\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"22ceecc6c27c4652bf4b73d9b163afa1","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542952503961},"jobId":"02C837BA76114A19A1E57BED855B2093","jobType":"REAL_TIME","realTaskId":"22ceecc6c27c4652bf4b73d9b163afa1","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542952505447}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 13:55:07.483 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.getLock(AbstractFailStore.java:48) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:33) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 13:55:07.486 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=18, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_8320_13-54-41.658_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542952503961"},"job":{"cron":false,"extParams":{"extParam":"{\"subStream\":\"1\",\"startTime\":\"1542773812\",\"endTime\":\"1542946612\",\"fileType\":\"All\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"loginName\":\"admin\",\"deviceCode\":\"1001\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"22ceecc6c27c4652bf4b73d9b163afa1","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542952503961},"jobId":"02C837BA76114A19A1E57BED855B2093","jobType":"REAL_TIME","realTaskId":"22ceecc6c27c4652bf4b73d9b163afa1","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542952507468}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:07:24.511 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:42) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+Caused by: java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.add(Unknown Source) ~[?:1.8.0_171]
+	at java.lang.Runtime.addShutdownHook(Unknown Source) ~[?:1.8.0_171]
+	at org.mapdb.Engine$CloseOnJVMShutdown.<init>(Engine.java:437) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.makeEngine(DBMaker.java:1518) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.make(DBMaker.java:1284) ~[mapdb-2.0-beta10.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 14:07:24.517 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=12, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_12308_14-07-00.285_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542953242787"},"job":{"cron":false,"extParams":{"extParam":"{\"subStream\":\"1\",\"startTime\":\"1542773812\",\"endTime\":\"1542946612\",\"fileType\":\"All\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"loginName\":\"admin\",\"deviceCode\":\"1001\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"d027e64d9da74b89bfb0fff505b956df","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542953242787},"jobId":"2F4E6F311B144EEABE8491AAE92F2AB4","jobType":"REAL_TIME","realTaskId":"d027e64d9da74b89bfb0fff505b956df","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542953244352}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:07:26.356 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.getLock(AbstractFailStore.java:48) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:33) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 14:07:26.357 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=18, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_12308_14-07-00.285_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542953242787"},"job":{"cron":false,"extParams":{"extParam":"{\"subStream\":\"1\",\"startTime\":\"1542773812\",\"endTime\":\"1542946612\",\"fileType\":\"All\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"loginName\":\"admin\",\"deviceCode\":\"1001\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"d027e64d9da74b89bfb0fff505b956df","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542953242787},"jobId":"2F4E6F311B144EEABE8491AAE92F2AB4","jobType":"REAL_TIME","realTaskId":"d027e64d9da74b89bfb0fff505b956df","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542953246352}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:19:25.645 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:42) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+Caused by: java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.add(Unknown Source) ~[?:1.8.0_171]
+	at java.lang.Runtime.addShutdownHook(Unknown Source) ~[?:1.8.0_171]
+	at org.mapdb.Engine$CloseOnJVMShutdown.<init>(Engine.java:437) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.makeEngine(DBMaker.java:1518) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.make(DBMaker.java:1284) ~[mapdb-2.0-beta10.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 14:19:25.650 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=12, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_12292_14-19-01.394_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542953963691"},"job":{"cron":false,"extParams":{"extParam":"{\"subStream\":\"1\",\"startTime\":\"1542773812\",\"endTime\":\"1542946612\",\"fileType\":\"All\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"loginName\":\"admin\",\"deviceCode\":\"1001\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"b22ecb16d4d14f12aac0edea8cb8aa69","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542953963691},"jobId":"E4646CF9589F41DA819F8D9D46446A5A","jobType":"REAL_TIME","realTaskId":"b22ecb16d4d14f12aac0edea8cb8aa69","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542953965480}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:19:27.293 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.getLock(AbstractFailStore.java:48) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:33) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 14:19:27.296 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=18, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_12292_14-19-01.394_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542953963691"},"job":{"cron":false,"extParams":{"extParam":"{\"subStream\":\"1\",\"startTime\":\"1542773812\",\"endTime\":\"1542946612\",\"fileType\":\"All\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"loginName\":\"admin\",\"deviceCode\":\"1001\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"b22ecb16d4d14f12aac0edea8cb8aa69","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542953963691},"jobId":"E4646CF9589F41DA819F8D9D46446A5A","jobType":"REAL_TIME","realTaskId":"b22ecb16d4d14f12aac0edea8cb8aa69","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542953967274}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:26:04.971 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:42) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+Caused by: java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.add(Unknown Source) ~[?:1.8.0_171]
+	at java.lang.Runtime.addShutdownHook(Unknown Source) ~[?:1.8.0_171]
+	at org.mapdb.Engine$CloseOnJVMShutdown.<init>(Engine.java:437) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.makeEngine(DBMaker.java:1518) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.make(DBMaker.java:1284) ~[mapdb-2.0-beta10.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 14:26:04.976 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=16, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_10808_14-25-41.114_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542954363222"},"job":{"cron":false,"extParams":{"extParam":"{\"subStream\":\"1\",\"startTime\":\"1542773812\",\"endTime\":\"1542946612\",\"fileType\":\"All\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"loginName\":\"admin\",\"deviceCode\":\"1001\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"11b6fde36d3a4dcca0b35e16810de86d","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542954363222},"jobId":"E2FF452DD37E410AB27E0A2FDBD8576A","jobType":"REAL_TIME","realTaskId":"11b6fde36d3a4dcca0b35e16810de86d","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542954364801}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:26:07.246 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.getLock(AbstractFailStore.java:48) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:33) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 14:26:07.249 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=22, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_10808_14-25-41.114_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542954363222"},"job":{"cron":false,"extParams":{"extParam":"{\"subStream\":\"1\",\"startTime\":\"1542773812\",\"endTime\":\"1542946612\",\"fileType\":\"All\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"loginName\":\"admin\",\"deviceCode\":\"1001\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"11b6fde36d3a4dcca0b35e16810de86d","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542954363222},"jobId":"E2FF452DD37E410AB27E0A2FDBD8576A","jobType":"REAL_TIME","realTaskId":"11b6fde36d3a4dcca0b35e16810de86d","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542954367228}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:42:45.376 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:42) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+Caused by: java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.add(Unknown Source) ~[?:1.8.0_171]
+	at java.lang.Runtime.addShutdownHook(Unknown Source) ~[?:1.8.0_171]
+	at org.mapdb.Engine$CloseOnJVMShutdown.<init>(Engine.java:437) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.makeEngine(DBMaker.java:1518) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.make(DBMaker.java:1284) ~[mapdb-2.0-beta10.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 14:42:45.382 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=12, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_12200_14-42-21.492_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542955363616"},"job":{"cron":false,"extParams":{"extParam":"{\"subStream\":\"1\",\"startTime\":\"1542773812\",\"endTime\":\"1542946612\",\"fileType\":\"All\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"loginName\":\"admin\",\"deviceCode\":\"1001\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"d42609a87f7a469391dcddd739fff395","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542955363616},"jobId":"D6948E9958BD4800AB9CAF554B7B50F3","jobType":"REAL_TIME","realTaskId":"d42609a87f7a469391dcddd739fff395","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542955365189}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:42:47.300 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.getLock(AbstractFailStore.java:48) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:33) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 14:42:47.301 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=18, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_12200_14-42-21.492_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542955363616"},"job":{"cron":false,"extParams":{"extParam":"{\"subStream\":\"1\",\"startTime\":\"1542773812\",\"endTime\":\"1542946612\",\"fileType\":\"All\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"loginName\":\"admin\",\"deviceCode\":\"1001\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"d42609a87f7a469391dcddd739fff395","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542955363616},"jobId":"D6948E9958BD4800AB9CAF554B7B50F3","jobType":"REAL_TIME","realTaskId":"d42609a87f7a469391dcddd739fff395","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542955367296}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:58:10.884 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: com.github.ltsopensource.core.failstore.FailStoreException: java.lang.IllegalStateException: Shutdown in progress
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:42) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+Caused by: java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.add(Unknown Source) ~[?:1.8.0_171]
+	at java.lang.Runtime.addShutdownHook(Unknown Source) ~[?:1.8.0_171]
+	at org.mapdb.Engine$CloseOnJVMShutdown.<init>(Engine.java:437) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.makeEngine(DBMaker.java:1518) ~[mapdb-2.0-beta10.jar:?]
+	at org.mapdb.DBMaker$Maker.make(DBMaker.java:1284) ~[mapdb-2.0-beta10.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.init(MapdbFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:35) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 14:58:10.889 [AbstractClientNode-thread-1] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=12, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_5816_14-57-46.534_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542956289218"},"job":{"cron":false,"extParams":{"extParam":"{\"subStream\":\"1\",\"startTime\":\"1542773812\",\"endTime\":\"1542946612\",\"fileType\":\"All\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"loginName\":\"admin\",\"deviceCode\":\"1001\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"8fc46e38d4ac45f9af4d5e02008b46ad","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542956289218},"jobId":"3C555D48B2394F83BE3CBC44EDEACE36","jobType":"REAL_TIME","realTaskId":"8fc46e38d4ac45f9af4d5e02008b46ad","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542956290719}}, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-23 14:58:12.785 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] process request exception, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.RuntimeException: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStore.<init>(MapdbFailStore.java:30) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.mapdb.MapdbFailStoreFactory.newInstance(MapdbFailStoreFactory.java:20) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStoreFactory.getFailStore(AbstractFailStoreFactory.java:25) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.support.RetryScheduler.<init>(RetryScheduler.java:62) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl$1.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerImpl.<init>(BizLoggerImpl.java:47) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.logger.BizLoggerFactory.getLogger(BizLoggerFactory.java:36) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.JobRunnerDelegate.<init>(JobRunnerDelegate.java:50) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.runner.RunnerPool.execute(RunnerPool.java:63) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.JobPushProcessor.processRequest(JobPushProcessor.java:84) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.tasktracker.processor.RemotingDispatcher.processRequest(RemotingDispatcher.java:37) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.remoting.AbstractRemoting$1.run(AbstractRemoting.java:73) [lts-1.6.9.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_171]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_171]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+Caused by: java.lang.IllegalStateException: can not get current file lock.
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.getLock(AbstractFailStore.java:48) ~[lts-1.6.9.jar:?]
+	at com.github.ltsopensource.core.failstore.AbstractFailStore.<init>(AbstractFailStore.java:33) ~[lts-1.6.9.jar:?]
+	... 17 more
+2018-11-23 14:58:12.786 [AbstractClientNode-thread-2] ERROR com.github.ltsopensource.remoting.AbstractRemoting -  [LTS] RemotingCommand{code=13, subCode=0, version=0, opaque=18, flag=0, remark='null', sid='-1', body={"identity":"JT_192.168.0.249_5816_14-57-46.534_2","jobMeta":{"internalExtParams":{"__LTS_Seq_Id":"1542956289218"},"job":{"cron":false,"extParams":{"extParam":"{\"subStream\":\"1\",\"startTime\":\"1542773812\",\"endTime\":\"1542946612\",\"fileType\":\"All\"}","taskName":"测试业务","jobType":"1","deviceInfo":"[{\"loginName\":\"admin\",\"deviceCode\":\"1001\"}]"},"maxRetryTimes":0,"needFeedback":true,"priority":100,"relyOnPrevCycle":true,"repeatCount":0,"repeatInterval":0,"repeatable":false,"replaceOnExist":false,"submitNodeGroup":"test_jobClient","taskId":"8fc46e38d4ac45f9af4d5e02008b46ad","taskTrackerNodeGroup":"test_trade_TaskTracker","triggerTime":1542956289218},"jobId":"3C555D48B2394F83BE3CBC44EDEACE36","jobType":"REAL_TIME","realTaskId":"8fc46e38d4ac45f9af4d5e02008b46ad","repeatedCount":0,"retryTimes":0},"nodeGroup":"lts","nodeType":"JOB_TRACKER","timestamp":1542956292765}}, lts version: 1.6.9, current host: 192.168.0.249

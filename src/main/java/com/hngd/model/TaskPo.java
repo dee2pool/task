@@ -40,7 +40,7 @@ public class TaskPo {
 	//是否依赖上个执行周期
 	private Boolean relyOnPrevCycle=true;
 	//任务类型(1.实时2.定时3.周期)
-	private Integer JobType;
+	private Integer jobType;
 	//执行业务名称
 	@NotNull
 	private String taskType;
@@ -142,11 +142,11 @@ public class TaskPo {
 	}
 	
 	public Integer getJobType() {
-		return JobType;
+		return jobType;
 	}
 
 	public void setJobType(Integer jobType) {
-		JobType = jobType;
+		jobType = jobType;
 	}
 	
 	public String getTaskType() {

@@ -40,6 +40,11 @@ public final class DgApiProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_hngdrpcdg_QuryFileRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_hngdrpcdg_QuryConfigRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_hngdrpcdg_QuryConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_hngdrpcdg_PerTaskRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -71,31 +76,35 @@ public final class DgApiProto {
       "Code\022\021\n\tfromTrmId\030\003 \001(\005\022\020\n\010toTrmIds\030\004 \001(" +
       "\t\022\023\n\013acceptTrmID\030\005 \001(\005\"[\n\020RecordQueryPar" +
       "am\022\021\n\tsubStream\030\001 \001(\005\022\020\n\010fileType\030\002 \001(\t\022" +
-      "\021\n\tstartTime\030\003 \001(\003\022\017\n\007endTime\030\004 \001(\003\"l\n\017Q" +
-      "uryFileRequest\022&\n\007devInfo\030\001 \003(\0132\025.hngdrp" +
+      "\021\n\tstartTime\030\003 \001(\003\022\017\n\007endTime\030\004 \001(\003\"|\n\017Q" +
+      "uryFileRequest\022&\n\007devInfo\030\001 \002(\0132\025.hngdrp" +
       "cdg.DeviceInfo\0221\n\014reQueryParam\030\002 \001(\0132\033.h" +
-      "ngdrpcdg.RecordQueryParam\"|\n\016PerTaskRequ" +
-      "est\022&\n\007devInfo\030\001 \003(\0132\025.hngdrpcdg.DeviceI" +
-      "nfo\0221\n\014reQueryParam\030\002 \001(\0132\033.hngdrpcdg.Re" +
-      "cordQueryParam\022\017\n\007perSecs\030\003 \001(\005\"\\\n\016Commo",
-      "nResponse\022\'\n\terrorCode\030\001 \002(\0162\024.hngdrpcdg" +
-      ".ErrorCode\022\023\n\013description\030\002 \001(\t\022\014\n\004data\030" +
-      "\003 \001(\014*8\n\nDoorStatus\022\t\n\005CLOSE\020\000\022\r\n\tOPEN_O" +
-      "NCE\020\001\022\020\n\014OPEN_ALLWAYS\020\002*+\n\tErrorCode\022\006\n\002" +
-      "OK\020\000\022\n\n\006FAILED\020\001\022\n\n\006OTHERS\020\002*t\n\020ITCOpera" +
-      "tionCode\022\023\n\017IOC_SPEECHSTART\020\000\022\022\n\016IOC_SPE" +
-      "ECHSTOP\020\001\022\021\n\rIOC_TALKSTART\020\002\022\020\n\014IOC_TALK" +
-      "STOP\020\003\022\022\n\016IOC_TALKACCEPT\020\004*)\n\nConfigType" +
-      "\022\007\n\003ADD\020\000\022\007\n\003DEL\020\001\022\t\n\005CLEAR\020\0022\277\002\n\005DgApi\022" +
-      "D\n\rSetDoorStatus\022\026.hngdrpcdg.DoorRequest",
-      "\032\031.hngdrpcdg.CommonResponse\"\000\022S\n\020ITCTalk" +
-      "Operation\022\".hngdrpcdg.ITCTalkOperationRe" +
-      "quest\032\031.hngdrpcdg.CommonResponse\"\000\022M\n\022Qu" +
-      "eryFileOperation\022\032.hngdrpcdg.QuryFileReq" +
-      "uest\032\031.hngdrpcdg.CommonResponse\"\000\022L\n\022Per" +
-      "iodicTaskConfig\022\031.hngdrpcdg.PerTaskReque" +
-      "st\032\031.hngdrpcdg.CommonResponse\"\000B\037\n\017com.h" +
-      "ngd.rpc.dgB\nDgApiProtoP\001"
+      "ngdrpcdg.RecordQueryParam\022\016\n\006taskID\030\003 \001(" +
+      "\t\"K\n\021QuryConfigRequest\022&\n\007devInfo\030\001 \002(\0132" +
+      "\025.hngdrpcdg.DeviceInfo\022\016\n\006taskID\030\002 \001(\t\"|" +
+      "\n\016PerTaskRequest\022&\n\007devInfo\030\001 \003(\0132\025.hngd",
+      "rpcdg.DeviceInfo\0221\n\014reQueryParam\030\002 \001(\0132\033" +
+      ".hngdrpcdg.RecordQueryParam\022\017\n\007perSecs\030\003" +
+      " \001(\005\"\\\n\016CommonResponse\022\'\n\terrorCode\030\001 \002(" +
+      "\0162\024.hngdrpcdg.ErrorCode\022\023\n\013description\030\002" +
+      " \001(\t\022\014\n\004data\030\003 \001(\014*8\n\nDoorStatus\022\t\n\005CLOS" +
+      "E\020\000\022\r\n\tOPEN_ONCE\020\001\022\020\n\014OPEN_ALLWAYS\020\002*+\n\t" +
+      "ErrorCode\022\006\n\002OK\020\000\022\n\n\006FAILED\020\001\022\n\n\006OTHERS\020" +
+      "\002*t\n\020ITCOperationCode\022\023\n\017IOC_SPEECHSTART" +
+      "\020\000\022\022\n\016IOC_SPEECHSTOP\020\001\022\021\n\rIOC_TALKSTART\020" +
+      "\002\022\020\n\014IOC_TALKSTOP\020\003\022\022\n\016IOC_TALKACCEPT\020\004*",
+      ")\n\nConfigType\022\007\n\003ADD\020\000\022\007\n\003DEL\020\001\022\t\n\005CLEAR" +
+      "\020\0022\222\003\n\005DgApi\022D\n\rSetDoorStatus\022\026.hngdrpcd" +
+      "g.DoorRequest\032\031.hngdrpcdg.CommonResponse" +
+      "\"\000\022S\n\020ITCTalkOperation\022\".hngdrpcdg.ITCTa" +
+      "lkOperationRequest\032\031.hngdrpcdg.CommonRes" +
+      "ponse\"\000\022M\n\022QueryFileOperation\022\032.hngdrpcd" +
+      "g.QuryFileRequest\032\031.hngdrpcdg.CommonResp" +
+      "onse\"\000\022Q\n\024QueryConfigOperation\022\034.hngdrpc" +
+      "dg.QuryConfigRequest\032\031.hngdrpcdg.CommonR" +
+      "esponse\"\000\022L\n\022PeriodicTaskConfig\022\031.hngdrp",
+      "cdg.PerTaskRequest\032\031.hngdrpcdg.CommonRes" +
+      "ponse\"\000B\037\n\017com.hngd.rpc.dgB\nDgApiProtoP\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -138,15 +147,21 @@ public final class DgApiProto {
     internal_static_hngdrpcdg_QuryFileRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_hngdrpcdg_QuryFileRequest_descriptor,
-        new java.lang.String[] { "DevInfo", "ReQueryParam", });
-    internal_static_hngdrpcdg_PerTaskRequest_descriptor =
+        new java.lang.String[] { "DevInfo", "ReQueryParam", "TaskID", });
+    internal_static_hngdrpcdg_QuryConfigRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_hngdrpcdg_QuryConfigRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_hngdrpcdg_QuryConfigRequest_descriptor,
+        new java.lang.String[] { "DevInfo", "TaskID", });
+    internal_static_hngdrpcdg_PerTaskRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_hngdrpcdg_PerTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_hngdrpcdg_PerTaskRequest_descriptor,
         new java.lang.String[] { "DevInfo", "ReQueryParam", "PerSecs", });
     internal_static_hngdrpcdg_CommonResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_hngdrpcdg_CommonResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_hngdrpcdg_CommonResponse_descriptor,

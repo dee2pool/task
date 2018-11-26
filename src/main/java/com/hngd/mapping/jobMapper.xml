@@ -127,7 +127,7 @@
 			<if test="relyOnPrevCycle != null">
 				rely_on_prev_cycle,
 			</if>
-			<if test="JobType != null">
+			<if test="jobType != null">
 				job_type,
 			</if>
 			<if test="taskType != null">
@@ -189,8 +189,8 @@
 			<if test="relyOnPrevCycle != null">
 				#{relyOnPrevCycle,jdbcType=BOOLEAN},
 			</if>
-			<if test="JobType != null">
-				#{JobType,jdbcType=INTEGER},
+			<if test="jobType != null">
+				#{jobType,jdbcType=INTEGER},
 			</if>
 			<if test="taskType != null">
 				#{taskType,jdbcType=VARCHAR},
@@ -254,8 +254,8 @@
 			<if test="record.relyOnPrevCycle != null">
 				rely_on_prev_cycle=#{record.relyOnPrevCycle,jdbcType=BOOLEAN},
 			</if>
-			<if test="record.JobType != null">
-				job_type=#{record.JobType,jdbcType=INTEGER},
+			<if test="record.jobType != null">
+				job_type=#{record.jobType,jdbcType=INTEGER},
 			</if>
 			<if test="record.taskType != null">
 				task_type=#{record.taskType,jdbcType=VARCHAR},

@@ -38,7 +38,7 @@ public class TaskClient {
 		channel.shutdown().awaitTermination(5,TimeUnit.SECONDS);
 	}
 	
-	public CommonResponse QueryFileOperation(Map<String,String> device,Map<String,String> queryParam) {
+	public CommonResponse QueryFileOperation(Map<String,String> device,Map<String,String> queryParam,String taskId) {
 		Builder db=DeviceInfo.newBuilder();
 		db.setStrDeviceCode(device.get("deviceCode"));
 		if(device.get("loginName")!=null) {
@@ -63,10 +63,10 @@ public class TaskClient {
 			db.setEnVendor(device.get("enVendor"));
 		}
 		DeviceInfo deviceInfo=db.build();
-		QuryFileRequest request=QuryFileRequest.newBuilder().addDevInfo(deviceInfo).
+		QuryFileRequest request=QuryFileRequest.newBuilder().setDevInfo(deviceInfo).
 				setReQueryParam(RecordQueryParam.newBuilder().setSubStream(Integer.parseInt(queryParam.get("subStream"))).
 						setFileType(queryParam.get("fileType")).setStartTime(Long.parseLong(queryParam.get("startTime")))
-						.setEndTime(Long.parseLong(queryParam.get("endTime"))).build()).build();
+						.setEndTime(Long.parseLong(queryParam.get("endTime"))).build()).setTaskID(taskId).build();
 		CommonResponse response;
 		try {
 			response=blockingStub.queryFileOperation(request);

@@ -41,8 +41,8 @@ public class JobRunnerImpl implements JobRunner{
             Map<String,String> subParam=GSON.fromJson(subParamJson,Map.class);
             TaskClient client=new TaskClient(HOST, PORT);
             for(Map m:devices) {
-            	CommonResponse response=client.QueryFileOperation(m,subParam);
-            	System.out.println(response);
+            	CommonResponse response=client.QueryFileOperation(m,subParam,job.getTaskId());
+            	
             }
             // 会发送到 LTS (JobTracker上)
             bizLogger.info("测试，业务日志");
