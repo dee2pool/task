@@ -19,4 +19,10 @@ public interface JobClientService {
 									String taskType,Integer jobType,String submitResult,String executeResult,Date beginTime,Date endTime);
 	
 	public Integer updateBytaskId(String taskId,TaskPo task);
+	
+	//删除任务
+	public Integer deleteTaskById(String taskId);
+	
+	//重试任务
+	public Result<String> retryTask(String taskId);
 }

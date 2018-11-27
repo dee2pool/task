@@ -18,6 +18,7 @@ import com.google.gson.internal.Streams;
 import com.google.gson.stream.JsonWriter;
 import com.hngd.common.result.Result;
 import com.hngd.common.web.page.PagedData;
+import com.hngd.dao.JobMapper;
 import com.hngd.model.Task;
 import com.hngd.model.TaskPo;
 import com.hngd.model.TaskVo;
@@ -49,6 +50,11 @@ public class TaskTest {
 		map2.put("endTime","1542946612");
 		task.setSubmitParam(map2);
 		jobClientService.addJob(task);
+	}
+	
+	@Test
+	public void getTaskTest() {
+		jobClientService.retryTask("5681330d99a44fd7b1e29ca62695c1c4");
 	}
 
 }

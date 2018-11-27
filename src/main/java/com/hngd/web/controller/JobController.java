@@ -75,4 +75,29 @@ public class JobController {
 			return RestResponses.newFailResponse(ErrorCode.INVALID_PARAMETER,"查询任务信息失败");
 		}
 	}
+	
+	/*删除任务*/
+	@ResponseBody
+	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	public RestResponse<Void> deleteTaskById(@RequestParam("taskId")String taskId){
+		Integer result=this.jobClientService.deleteTaskById(taskId);
+		if (ErrorCode.NO_ERROR.equals(result)) {
+		    return RestResponses.newSuccessResponse("删除任务成功");
+		} else {
+		    return RestResponses.newFailResponse(result,"删除任务失败");
+		}
+	}
+	
+	/*重试任务*/
+	@ResponseBody
+	@RequestMapping(value="/retry",method=RequestMethod.POST)
+	public RestResponse<String> retryTask(@RequestParam("taskId")String taskId){
+		Result<String> result=this.jobClientService.retryTask(taskId);
+		if(result.isSuccess()) {
+			return RestResponses.newSuccessResponse("重试任务成功", 1, result.getData());
+		}else {
+			return RestResponses.newFailResponse(result.getErrorCode(), result.getDescription());
+		}
+	}
+	
 }

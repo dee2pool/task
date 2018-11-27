@@ -57,17 +57,17 @@ public class JsonElementTypeHandler extends BaseTypeHandler<Object> {
 
 	@Override
 	public Object getNullableResult(ResultSet rs, String columnName) throws SQLException {
-		return rs.getString(columnName);
+		return GSON.fromJson(rs.getString(columnName),Object.class);
 	}
 
 	@Override
 	public Object getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
-		return rs.getString(columnIndex);
+		return GSON.fromJson(rs.getString(columnIndex),Object.class);
 	}
 
 	@Override
 	public Object getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
-		return cs.getString(columnIndex);
+		return GSON.fromJson(cs.getString(columnIndex),Object.class);
 	}
 
 }

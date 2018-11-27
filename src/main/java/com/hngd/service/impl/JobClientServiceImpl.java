@@ -22,6 +22,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.hngd.common.error.ErrorCode;
+import com.hngd.common.exception.DBErrorException;
 import com.hngd.common.result.Result;
 import com.hngd.common.result.Results;
 import com.hngd.common.util.UuidUtils;
@@ -153,6 +154,66 @@ public class JobClientServiceImpl implements JobClientService{
 			return ErrorCode.NO_ERROR;
 		}else {
 			return ErrorCode.DB_ERROR;
+		}
+	}
+
+	@Override
+	public Integer deleteTaskById(String taskId) {
+		if(StringUtils.isEmpty(taskId)) {
+			logger.debug("the id has no data");
+			return ErrorCode.INVALID_PARAMETER;
+		}
+		int result=jobMapper.deleteByPrimaryKey(taskId);
+		if (result > 0){
+            return ErrorCode.NO_ERROR;
+        } else{
+            throw new DBErrorException();
+        }
+	}
+
+	@Override
+	public Result<String> retryTask(String taskId) {
+		if(StringUtils.isEmpty(taskId)) {
+			logger.debug("the taskId is null");
+			return Results.newFailResult(ErrorCode.INVALID_PARAMETER, "任务id不存在");
+		}
+		TaskPo task=jobMapper.selectByPrimaryKey(taskId);
+		if(task==null) {
+			return Results.newFailResult(ErrorCode.INVALID_PARAMETER, "任务不存在");
+		}else {
+			Job job=new Job();
+			job.setTaskId(task.getTaskId());
+			job.setPriority(task.getPriority());
+			job.setTaskTrackerNodeGroup(task.getTaskTrackerNodeGroup());
+			Map<String,String> param=new HashMap<>();
+			param.put("jobType",task.getJobType().toString());
+			param.put("taskType",task.getTaskType());
+			param.put("taskName",task.getTaskName());
+			param.put("deviceInfo",GSON.toJson(task.getTaskDevice()));
+			param.put("extParam",GSON.toJson(task.getSubmitParam()));
+			job.setExtParams(param);
+			job.setNeedFeedback(true);
+			job.setReplaceOnExist(true);
+			//判断任务类型
+			if(task.getJobType()!=null) {
+				switch (task.getJobType()) {
+				case 2:
+					job.setTriggerTime(task.getTriggerTime().getTime());
+					break;
+				case 3:
+					job.setCronExpression(task.getCronTemplet());
+					break;
+				default:
+					break;
+				}
+			}
+			//提交任务到lts
+			Response response=jobClient.submitJob(job);
+			if(response.isSuccess()) {
+				return Results.newSuccessResult(task.getTaskId());
+			}else {
+				return Results.newFailResult(ErrorCode.DB_ERROR, "重试任务失败");
+			}
 		}
 	}
 }

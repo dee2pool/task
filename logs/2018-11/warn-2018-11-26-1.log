@@ -1,0 +1,254 @@
+2018-11-26 10:37:36.517 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 10:37:36.557 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 10:39:18.683 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 10:39:18.687 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 10:41:38.189 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1543200098189, current=DOWN, previous=UP]
+2018-11-26 10:41:39.102 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@585fb401, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.IllegalStateException: executor not accepting a task
+	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:49) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:188) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:174) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:511) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:485) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:424) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:103) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:978) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:512) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:423) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:482) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+2018-11-26 10:41:39.214 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-26 10:42:44.791 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 10:42:44.795 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 10:44:01.734 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1543200241734, current=DOWN, previous=UP]
+2018-11-26 10:44:02.485 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@7ac0632f, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.IllegalStateException: executor not accepting a task
+	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:49) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:188) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:174) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:511) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:485) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:424) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:103) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:978) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:512) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:423) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:482) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+2018-11-26 10:44:02.597 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-26 10:44:24.312 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 10:44:24.315 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 10:47:30.192 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1543200450192, current=DOWN, previous=UP]
+2018-11-26 10:47:30.565 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@1ddfe004, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.IllegalStateException: executor not accepting a task
+	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:49) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:188) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:174) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:511) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:485) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:424) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:103) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:978) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:512) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:423) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:482) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+2018-11-26 10:47:30.678 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-26 10:47:54.873 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 10:47:54.876 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 14:04:58.984 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1543212298984, current=DOWN, previous=UP]
+2018-11-26 14:04:59.882 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@2f8a78a2, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.IllegalStateException: executor not accepting a task
+	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:49) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:188) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:174) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:511) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:485) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:424) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:103) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:978) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:512) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:423) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:482) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+2018-11-26 14:04:59.990 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-26 14:06:57.679 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 14:06:57.683 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 15:56:01.169 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1543218961169, current=DOWN, previous=UP]
+2018-11-26 15:56:01.763 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@6fee8da4, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.IllegalStateException: executor not accepting a task
+	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:49) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:188) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:174) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:511) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:485) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:424) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:103) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:978) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:512) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:423) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:482) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+2018-11-26 15:56:01.866 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-26 15:56:40.823 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 15:56:40.828 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 16:08:49.129 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1543219729129, current=DOWN, previous=UP]
+2018-11-26 16:08:49.255 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@2b5e8bfb, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.IllegalStateException: executor not accepting a task
+	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:49) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:188) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:174) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:511) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:485) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:424) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:103) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:978) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:512) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:423) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:482) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+2018-11-26 16:08:49.357 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-26 16:09:12.785 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 16:09:12.789 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 16:13:44.430 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1543220024430, current=DOWN, previous=UP]
+2018-11-26 16:13:45.298 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@4cd19a81, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.IllegalStateException: executor not accepting a task
+	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:49) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:188) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:174) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:511) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:485) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:424) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:103) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:978) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:512) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:423) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:482) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+2018-11-26 16:13:45.402 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-26 16:14:38.597 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 16:14:38.601 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 16:17:51.954 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1543220271954, current=DOWN, previous=UP]
+2018-11-26 16:17:52.596 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@63bc3e9, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.IllegalStateException: executor not accepting a task
+	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:49) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:188) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:174) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:511) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:485) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:424) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:103) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:978) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:512) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:423) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:482) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+2018-11-26 16:17:52.700 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-26 16:18:16.169 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 16:18:16.173 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 16:28:58.546 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1543220938546, current=DOWN, previous=UP]
+2018-11-26 16:28:58.876 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@6a077863, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.IllegalStateException: executor not accepting a task
+	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:49) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:188) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:174) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:511) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:485) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:424) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:103) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:978) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:512) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:423) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:482) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+2018-11-26 16:28:58.979 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-26 16:44:17.701 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 16:44:17.704 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 16:49:00.567 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1543222140567, current=DOWN, previous=UP]
+2018-11-26 16:49:01.263 [LTS-JobPullMachine-Executor-thread-1] WARN  com.github.ltsopensource.remoting.AbstractRemotingClient -  [LTS] createChannel: connect remote host[192.168.0.249:35001] failed, com.github.ltsopensource.remoting.netty.NettyChannelFuture@7409bd4d, lts version: 1.6.9, current host: 192.168.0.249
+java.lang.IllegalStateException: executor not accepting a task
+	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:60) ~[netty-resolver-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:200) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap.access$000(Bootstrap.java:49) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:188) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.bootstrap.Bootstrap$1.operationComplete(Bootstrap.java:174) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:511) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:485) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:424) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:103) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetSuccess(AbstractChannel.java:978) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:512) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:423) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:482) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:446) ~[netty-transport-4.1.29.Final.jar:4.1.29.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) ~[netty-common-4.1.29.Final.jar:4.1.29.Final]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_171]
+2018-11-26 16:49:01.376 [LTS-JobPullMachine-Executor-thread-1] WARN  JobPullMachine -  [LTS] no job tracker available!, lts version: 1.6.9, current host: 192.168.0.249
+2018-11-26 16:51:03.412 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-11-26 16:51:03.416 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
