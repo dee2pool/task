@@ -29,6 +29,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.internal.Streams;
+import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonWriter;
 
 import org.apache.ibatis.type.BaseTypeHandler;
@@ -42,8 +43,10 @@ import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
 
-@MappedTypes({ Object.class })
+@MappedTypes({Object.class})
 public class JsonElementTypeHandler extends BaseTypeHandler<Object> {
 	private static final Gson GSON=new Gson();
 	@Override
@@ -57,17 +60,25 @@ public class JsonElementTypeHandler extends BaseTypeHandler<Object> {
 
 	@Override
 	public Object getNullableResult(ResultSet rs, String columnName) throws SQLException {
-		return GSON.fromJson(rs.getString(columnName),Object.class);
+		Object result=null;
+		if("task_device".equals(columnName)){
+			 result=GSON.fromJson(rs.getString(columnName),new TypeToken<List<Map<String,String>>>(){}.getType());
+		}else if("submit_param".equals(columnName)){
+			 result=GSON.fromJson(rs.getString(columnName),Map.class);
+		}else {
+			result=rs.getString(columnName);
+		}
+		return result;
 	}
 
 	@Override
 	public Object getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
-		return GSON.fromJson(rs.getString(columnIndex),Object.class);
+		return rs.getString(columnIndex);
 	}
 
 	@Override
 	public Object getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
-		return GSON.fromJson(cs.getString(columnIndex),Object.class);
+		return cs.getString(columnIndex);
 	}
 
 }

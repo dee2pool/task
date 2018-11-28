@@ -12,6 +12,7 @@
     	<result column="run_count" jdbcType="INTEGER" property="runCount" />
     	<result column="faile_count" jdbcType="INTEGER" property="faileCount" />
     	<result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    	<result column="cron_templet" jdbcType="VARCHAR" property="cronTemplet" />
     	<result column="trigger_time" jdbcType="TIMESTAMP" property="triggerTime" />
     	<result column="task_type" jdbcType="VARCHAR" property="taskType" />
   	</resultMap>
@@ -21,9 +22,9 @@
     	<result column="priority" jdbcType="INTEGER" property="priority" />
     	<result column="submit_node_group" jdbcType="VARCHAR" property="submitNodeGroup" />
     	<result column="task_tracker_node_group" jdbcType="VARCHAR" property="taskTrackerNodeGroup" />
-    	<result column="task_device" jdbcType="OTHER" property="taskDevice" typeHandler="com.hngd.handler.JsonElementTypeHandler" />
-    	<result column="submit_param" jdbcType="OTHER" property="submitParam" typeHandler="com.hngd.handler.JsonElementTypeHandler"/>
-    	<result column="max_retry_times" jdbcType="INTEGER" property="taskDevice" />
+    	<result column="task_device" property="taskDevice" jdbcType="OTHER" typeHandler="com.hngd.handler.JsonElementTypeHandler" />
+    	<result column="submit_param" property="submitParam" jdbcType="OTHER" typeHandler="com.hngd.handler.JsonElementTypeHandler"/>
+    	<result column="max_retry_times" jdbcType="INTEGER" property="maxRetryTimes" />
     	<result column="cron_templet" jdbcType="VARCHAR" property="cronTemplet" />
     	<result column="submit_result" jdbcType="VARCHAR" property="submitResult" />
     	<result column="execute_result" jdbcType="VARCHAR" property="executeResult" />
@@ -96,7 +97,7 @@
     </where>
   </sql>
   	<sql id="Base_Column_List">
-    	task_id, task_name, priority, submit_result, execute_result, job_type, end_time, run_count,faile_count,remarks,trigger_time,task_type
+    	task_id, task_name, priority, submit_result, execute_result, job_type, end_time, run_count,faile_count,remarks,trigger_time,task_type,cron_templet
   	</sql>
   	<sql id="Column_List">
     	task_id, task_name,priority,submit_result,task_tracker_node_group,submit_node_group,task_device,max_retry_times,cron_templet,replace_on_exist,rely_on_prev_cycle,submit_param,execute_result,job_type, end_time, run_count,faile_count,remarks,trigger_time,task_type

@@ -146,7 +146,7 @@ public class TaskPo {
 	}
 
 	public void setJobType(Integer jobType) {
-		jobType = jobType;
+		this.jobType = jobType;
 	}
 	
 	public String getTaskType() {

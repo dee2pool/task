@@ -113,9 +113,10 @@ message QuryConfigRequest {
 
 //周期任务配置请求
 message PerTaskRequest {
-    repeated DeviceInfo devInfo           = 1;
+    required DeviceInfo devInfo           = 1;
 	optional RecordQueryParam  reQueryParam   = 2;
 	optional int32 perSecs                          = 3;//循环周期，单位：秒
+	optional string		taskID  =4;//任务ID（CMS根据任务ID关联查询应答）
 }
 //通用请求应答
 message CommonResponse{

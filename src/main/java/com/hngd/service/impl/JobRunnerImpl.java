@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.github.ltsopensource.core.domain.Action;
@@ -20,6 +21,7 @@ import com.github.ltsopensource.tasktracker.runner.JobRunner;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hngd.client.TaskClient;
+import com.hngd.common.util.UuidUtils;
 import com.hngd.model.TaskPo;
 import com.hngd.rpc.dg.CommonResponse;
 import com.hngd.service.JobClientService;
@@ -42,7 +44,7 @@ public class JobRunnerImpl implements JobRunner{
 		TaskPo taskPo=new TaskPo();
 		 List<Map<String,String>> deviceResultList=new ArrayList<>();
          Map<String,String> deviceResult=new HashMap<>();
-         Job job;
+         Job job=null;
 		try {
             BizLogger bizLogger = jobContext.getBizLogger();
             // TODO 业务逻辑
@@ -54,7 +56,23 @@ public class JobRunnerImpl implements JobRunner{
             Map<String,String> subParam=GSON.fromJson(subParamJson,Map.class);
             TaskClient client=new TaskClient(HOST, PORT);
             for(Map m:devices) {
-            	CommonResponse response=client.QueryFileOperation(m,subParam,job.getTaskId());
+            	CommonResponse response=client.QueryFileOperation(m,subParam,UuidUtils.uuid());;
+            	//if(StringUtils.isEmpty(job.getCronExpression())) {
+            	//}else {
+            		//int perSecs=0;
+            		//switch (job.getCronExpression()) {
+					//case "*/10 * * * * ?":
+						//perSecs=10;
+						//break;
+					//case "*/30 * * * * ?":
+						//perSecs=30;
+						//break;
+					//default:
+						//break;
+					//}
+            		 //response=client.PeriodicTaskConfig(m,subParam,perSecs,job.getTaskId());
+            		 //taskPo.setTriggerTime(new Date());
+            	//}
             	if(response!=null) {
             		switch (response.getErrorCode()) {
     				case OK:
@@ -75,6 +93,7 @@ public class JobRunnerImpl implements JobRunner{
             }
             deviceResultList.add(deviceResult);
             // 会发送到 LTS (JobTracker上)
+            taskPo.setTriggerTime(new Date());
             taskPo.setRunCount(1);
             bizLogger.info("测试，业务日志");
         } catch (Exception e) {

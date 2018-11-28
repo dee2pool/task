@@ -83,7 +83,7 @@ public class JobClientServiceImpl implements JobClientService{
 					break;
 				}
 			}
-			//提交任务到lts
+			//提交任务到lts TODO 异常判断
 			Response response=jobClient.submitJob(job);
 			//根据提交结果更新数据库
 			TaskPo tp=new TaskPo();
